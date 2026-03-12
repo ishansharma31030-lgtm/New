@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewOrbit Services — Project Portfolio</title>
+  <meta name="description" content="NewOrbit Services — 200+ engineering projects in BIM Solutions, Automation, Scan-to-BIM, Structural Engineering and more. Headquartered in Jaipur, Rajasthan." />
+  <meta property="og:title" content="NewOrbit Services — Project Portfolio" />
+  <meta property="og:description" content="Explore 200+ landmark projects by NewOrbit Services based in Jaipur, Rajasthan." />
+  <meta property="og:image" content="images/newOrbit-logo.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Favicon: inline SVG orbit icon -->
+  <link rel="icon" type="image/svg+xml" href="images/newOrbit-logo.svg" />
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="NewOrbit Services Home">
+      <img src="images/newOrbit-logo.svg" alt="NewOrbit Services Logo" height="46" />
+    </a>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#hero"         class="active">Home</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#categories">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-in">
+      <span class="dot"></span>
+      Headquartered in Jaipur, Rajasthan, India
+    </div>
+
+    <img src="images/newOrbit-logo.svg" alt="NewOrbit Services" class="hero-logo fade-in fade-in-d1" />
+
+    <h1 class="hero-title fade-in fade-in-d2">
+      Engineering <span class="accent">Tomorrow's</span> Spaces
+    </h1>
+    <p class="hero-subtitle fade-in fade-in-d2">
+      A premier digital engineering firm delivering BIM Solutions, Scan-to-BIM, Automation,
+      Structural Engineering and Smart Building services across India's most ambitious projects.
+    </p>
+
+    <div class="hero-actions fade-in fade-in-d3">
+      <a href="#projects" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l9 4.5v9L12 20l-9-4.5v-9L12 2z"/></svg>
+        View Portfolio
+      </a>
+      <a href="#contact" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in Touch
+      </a>
+    </div>
+
+    <div class="hero-stats fade-in fade-in-d3">
+      <div class="hero-stat">
+        <span class="num" data-target="220" data-suffix="+">220+</span>
+        <span class="label">Projects Delivered</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num" data-target="32" data-suffix="+">32+</span>
+        <span class="label">Clients Served</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num" data-target="10" data-suffix="">10</span>
+        <span class="label">Service Categories</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num" data-target="2015" data-suffix="">2015</span>
+        <span class="label">Est. Year</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS
+══════════════════════════════════════════════════════ -->
+<section id="stats" aria-label="Project statistics">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">By the Numbers</div>
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-desc">A snapshot of our delivery footprint across Jaipur, Rajasthan, and beyond.</p>
+    </div>
+    <div class="stats-grid" id="stats-grid">
+      <!-- populated by app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CATEGORIES
+══════════════════════════════════════════════════════ -->
+<section id="categories" aria-label="Service categories">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Expertise</div>
+      <h2 class="section-title">Service Categories</h2>
+      <p class="section-desc">Click any category to instantly filter the project portfolio.</p>
+    </div>
+    <div class="cat-grid" id="cat-grid">
+      <!-- populated by app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════════════════════ -->
+<section id="projects" aria-label="Project portfolio">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">All Projects</h2>
+      <p class="section-desc">220+ landmark projects originating from our Jaipur headquarters. Click any card for the 3D view.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="search">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" id="search-input" placeholder="Search projects, clients…" aria-label="Search projects" />
+      </div>
+
+      <select id="cat-filter" class="filter-select" aria-label="Filter by category">
+        <option value="">All Categories</option>
+        <option>BIM Solutions</option>
+        <option>Scan-to-BIM</option>
+        <option>Automation</option>
+        <option>Structural Engineering</option>
+        <option>MEP Coordination</option>
+        <option>Architectural Design</option>
+        <option>Infrastructure</option>
+        <option>Green Building</option>
+        <option>Interior Design</option>
+        <option>Smart Building</option>
+      </select>
+
+      <select id="status-filter" class="filter-select" aria-label="Filter by status">
+        <option value="">All Status</option>
+        <option>Completed</option>
+        <option>Ongoing</option>
+        <option>Planned</option>
+      </select>
+
+      <select id="year-filter" class="filter-select" aria-label="Filter by year">
+        <option value="">All Years</option>
+        <!-- populated dynamically -->
+      </select>
+    </div>
+
+    <!-- Status chips -->
+    <div class="filter-chips" id="filter-chips" role="group" aria-label="Quick status filters"></div>
+
+    <!-- Results meta -->
+    <p class="results-meta" id="results-meta" aria-live="polite"></p>
+
+    <!-- Projects grid -->
+    <div class="projects-grid" id="projects-grid" role="list">
+      <!-- populated by app.js -->
+    </div>
+
+    <!-- Load more -->
+    <div class="load-more-wrap">
+      <button class="btn-secondary" id="load-more" style="display:none;">
+        Load More Projects
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════ -->
+<section id="testimonials" aria-label="Client testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Client Stories</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-desc">Hear from project leaders across India's top construction and infrastructure firms.</p>
+    </div>
+    <div class="testimonials-track" id="testimonials-list">
+      <!-- populated by app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════ -->
+<section id="contact" aria-label="Contact NewOrbit Services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Let's Work Together</div>
+      <h2 class="section-title">Contact NewOrbit Services</h2>
+      <p class="section-desc">Ready to start your next project? Reach out to our team in Jaipur.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Our expert team based in Jaipur, Rajasthan is ready to discuss your next BIM, Automation, or Scan-to-BIM project. We deliver world-class digital engineering services with a local advantage.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-item-icon">📍</span>
+            <div>
+              <div class="contact-item-label">Head Office</div>
+              <div class="contact-item-value">Jaipur, Rajasthan 302001, India</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📞</span>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value">+91-141-123-4567</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">✉️</span>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">info@neworbitservices.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">🌐</span>
+            <div>
+              <div class="contact-item-label">Website</div>
+              <div class="contact-item-value">www.neworbitservices.com</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Twitter" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Facebook" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div>
+        <form id="contact-form" class="contact-form" novalidate aria-label="Inquiry form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Full Name *</label>
+              <input type="text" id="cf-name" class="form-input" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-company">Company</label>
+              <input type="text" id="cf-company" class="form-input" placeholder="Your company" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email *</label>
+              <input type="email" id="cf-email" class="form-input" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-phone">Phone</label>
+              <input type="tel" id="cf-phone" class="form-input" placeholder="+91 98765 43210" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-service">Service Required</label>
+            <select id="cf-service" class="form-select">
+              <option value="">Select a service…</option>
+              <option>BIM Solutions</option>
+              <option>Scan-to-BIM</option>
+              <option>Automation</option>
+              <option>Structural Engineering</option>
+              <option>MEP Coordination</option>
+              <option>Architectural Design</option>
+              <option>Infrastructure</option>
+              <option>Green Building</option>
+              <option>Interior Design</option>
+              <option>Smart Building</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-message">Message *</label>
+            <textarea id="cf-message" class="form-textarea" placeholder="Tell us about your project…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Inquiry
+          </button>
+        </form>
+        <div id="form-success" role="alert">
+          <p style="font-size:2rem;margin-bottom:12px;">✅</p>
+          <p style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Message Sent!</p>
+          <p style="font-size:0.9rem;opacity:0.8;">Thank you for reaching out to NewOrbit Services. Our team will respond within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="images/newOrbit-logo.svg" alt="NewOrbit Services" />
+        <p>NewOrbit Services is a leading digital engineering consultancy headquartered in Jaipur, Rajasthan, delivering world-class BIM, automation, and smart building solutions across India.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Twitter" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="#categories">BIM Solutions</a></li>
+          <li><a href="#categories">Scan-to-BIM</a></li>
+          <li><a href="#categories">Automation</a></li>
+          <li><a href="#categories">Structural Engineering</a></li>
+          <li><a href="#categories">MEP Coordination</a></li>
+          <li><a href="#categories">Smart Building</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">About Us</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact short -->
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+911411234567">+91-141-123-4567</a></li>
+          <li><a href="mailto:info@neworbitservices.com">info@neworbitservices.com</a></li>
+          <li><a href="#contact">Jaipur, Rajasthan 302001</a></li>
+          <li><a href="#contact">India</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 <strong>NewOrbit Services</strong>. All rights reserved. | Jaipur, Rajasthan, India.</p>
+      <p class="footer-location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Origin: Jaipur, Rajasthan, India
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- ══════════════════════════════════════════════════════
+     3D PROJECT MODAL
+══════════════════════════════════════════════════════ -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+  <div class="modal-box">
+    <!-- Header -->
+    <div class="modal-header">
+      <div>
+        <h2 class="modal-title" id="modal-project-title">Project Title</h2>
+        <p class="modal-subtitle" id="modal-project-subtitle">Category · Location</p>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+    </div>
+
+    <!-- 3D Viewer canvas -->
+    <div id="viewer3d" style="position:relative;"></div>
+
+    <!-- Image gallery strip -->
+    <div class="gallery-strip" id="gallery-strip" aria-label="Project images"></div>
+
+    <!-- Project details -->
+    <div class="modal-details">
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">Client</div>
+          <div class="detail-value" id="modal-client">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Status</div>
+          <div class="detail-value" id="modal-status">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Budget</div>
+          <div class="detail-value" id="modal-budget">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Year</div>
+          <div class="detail-value" id="modal-year">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Duration</div>
+          <div class="detail-value" id="modal-duration">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Category</div>
+          <div class="detail-value" id="modal-category">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Location</div>
+          <div class="detail-value" id="modal-location">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Completion</div>
+          <div class="detail-value" id="modal-progress">—</div>
+        </div>
+      </div>
+      <p class="modal-desc" id="modal-desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════ -->
+<!-- Three.js r165 CDN (3D viewer) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+
+<!-- App data & logic -->
+<script src="js/data.js"></script>
+<script src="js/3d-viewer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
