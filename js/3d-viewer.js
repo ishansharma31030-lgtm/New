@@ -1,6 +1,7 @@
 /* NewOrbit Services – 3D Viewer
    Uses Three.js (CDN) to render a 3D rotating box with the project image mapped to its faces.
    Supports orbit controls, zoom, auto-rotate, and swapping the image texture.
+   Also shows additional gallery image panels and a transparent company logo watermark.
 */
 
 function launch3DViewer(project) {
@@ -76,6 +77,33 @@ function launch3DViewer(project) {
     scene.add(mesh);
   }
 
+  // ── Gallery image panels (floating beside the main box) ───────────────────
+  const panelMeshes = [];
+  const allGalleryImgs = project.gallery || [];
+  const panelPositions = [
+    { x: -2.8, y:  0.4, z: -0.6, ry:  0.5 },
+    { x:  2.8, y:  0.4, z: -0.6, ry: -0.5 },
+    { x: -1.6, y: -0.7, z: -1.2, ry:  0.3 },
+    { x:  1.6, y: -0.7, z: -1.2, ry: -0.3 }
+  ];
+
+  allGalleryImgs.slice(0, 4).forEach((imgUrl, i) => {
+    const pGeo = new THREE.PlaneGeometry(1.4, 0.88);
+    const pMat = new THREE.MeshStandardMaterial({ color: 0x1a2540, metalness: 0.3, roughness: 0.5, transparent: true, opacity: 0.9 });
+    const pMesh = new THREE.Mesh(pGeo, pMat);
+    const pos = panelPositions[i];
+    pMesh.position.set(pos.x, pos.y, pos.z);
+    pMesh.rotation.y = pos.ry;
+    scene.add(pMesh);
+    panelMeshes.push(pMesh);
+
+    texLoader.load(imgUrl, tex => {
+      pMat.map = tex;
+      pMat.color.set(0xffffff);
+      pMat.needsUpdate = true;
+    }, undefined, () => {});
+  });
+
   // ── Floor grid ────────────────────────────────────────────────────────────
   const grid = new THREE.GridHelper(12, 24, 0x1e90ff, 0x112244);
   grid.position.y = -1.2;
@@ -91,6 +119,13 @@ function launch3DViewer(project) {
   particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   const particleMat = new THREE.PointsMaterial({ color: 0x1e90ff, size: 0.04, transparent: true, opacity: 0.6 });
   scene.add(new THREE.Points(particleGeo, particleMat));
+
+  // ── Logo watermark overlay ────────────────────────────────────────────────
+  const logoOverlay = document.createElement('img');
+  logoOverlay.src = 'images/newOrbit-logo.svg';
+  logoOverlay.alt = 'NewOrbit Services';
+  logoOverlay.style.cssText = 'position:absolute;top:10px;left:14px;height:32px;opacity:0.55;pointer-events:none;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.6));z-index:2;';
+  container.appendChild(logoOverlay);
 
   // ── Orbit controls (manual drag) ─────────────────────────────────────────
   let isDragging = false, prevX = 0, prevY = 0;
@@ -193,6 +228,11 @@ function launch3DViewer(project) {
       mesh.position.y = Math.sin(t * 0.8) * 0.06;
     }
 
+    // Gently float the gallery panels
+    panelMeshes.forEach((pm, i) => {
+      pm.position.y = panelPositions[i].y + Math.sin(t * 0.6 + i * 1.2) * 0.05;
+    });
+
     particleMat.opacity = 0.4 + Math.sin(t) * 0.2;
     renderer.render(scene, camera);
   }
@@ -215,6 +255,7 @@ function launch3DViewer(project) {
     renderer.dispose();
     geo.dispose();
     if (currentTexture) currentTexture.dispose();
+    panelMeshes.forEach(pm => { pm.geometry.dispose(); pm.material.dispose(); });
     container.innerHTML = '';
     window._viewer3dDispose  = null;
     window._viewer3dSetImage = null;
@@ -223,9 +264,53 @@ function launch3DViewer(project) {
 
 // ── Fallback (Three.js unavailable) ──────────────────────────────────────────
 function showFallback(container, project) {
-  container.innerHTML = `
-    <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:linear-gradient(160deg,#060c1e,#0a1535);">
-      <img src="${project.image}" alt="${project.title}" style="max-height:70%;max-width:88%;object-fit:contain;border-radius:10px;box-shadow:0 0 40px rgba(30,144,255,0.3);">
-      <p style="color:#63B3ED;font-size:0.85rem;">3D Viewer • ${project.title}</p>
-    </div>`;
+  const allImgs = [project.image, ...(project.gallery || [])];
+
+  // Wrapper
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:linear-gradient(160deg,#060c1e,#0a1535);';
+
+  // Logo watermark
+  const logo = document.createElement('img');
+  logo.src = 'images/newOrbit-logo.svg';
+  logo.alt = 'NewOrbit Services';
+  logo.style.cssText = 'position:absolute;top:10px;left:14px;height:28px;opacity:0.5;pointer-events:none;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.6));';
+  wrap.appendChild(logo);
+
+  // Main preview image
+  const imgWrap = document.createElement('div');
+  imgWrap.style.cssText = 'text-align:center;';
+  const mainImg = document.createElement('img');
+  mainImg.src = project.image;
+  mainImg.alt = project.title;
+  mainImg.style.cssText = 'max-height:220px;max-width:88%;object-fit:contain;border-radius:10px;box-shadow:0 0 40px rgba(30,144,255,0.3);';
+  imgWrap.appendChild(mainImg);
+  wrap.appendChild(imgWrap);
+
+  // Thumbnail strip
+  const strip = document.createElement('div');
+  strip.style.cssText = 'display:flex;gap:8px;padding:0 12px;';
+  allImgs.slice(0, 4).forEach((src, i) => {
+    const thumb = document.createElement('img');
+    thumb.src = src;
+    thumb.alt = 'View ' + (i + 1);
+    thumb.style.cssText = 'height:52px;width:80px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid ' +
+      (i === 0 ? '#1e90ff' : 'rgba(30,144,255,0.3)') + ';opacity:' + (i === 0 ? '1' : '0.65') + ';';
+    thumb.addEventListener('click', () => {
+      mainImg.src = src;
+      strip.querySelectorAll('img').forEach(t => { t.style.opacity = '0.65'; t.style.borderColor = 'rgba(30,144,255,0.3)'; });
+      thumb.style.opacity = '1';
+      thumb.style.borderColor = '#1e90ff';
+    });
+    strip.appendChild(thumb);
+  });
+  wrap.appendChild(strip);
+
+  // Label
+  const label = document.createElement('p');
+  label.style.cssText = 'color:#63B3ED;font-size:0.85rem;';
+  label.textContent = '3D Viewer \u2022 ' + project.title;
+  wrap.appendChild(label);
+
+  container.appendChild(wrap);
 }
