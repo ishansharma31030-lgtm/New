@@ -439,3 +439,81 @@ const TESTIMONIALS = [
     avatar: "https://i.pravatar.cc/80?img=15"
   }
 ];
+
+/* ═══════════════════════════════════════════════════════════
+   VACANCIES / CAREER OPENINGS
+═══════════════════════════════════════════════════════════ */
+const VACANCIES = [
+  {
+    title: "Senior BIM Modeler (Revit)",
+    department: "BIM Solutions",
+    icon: "🏗️",
+    badge: "urgent",
+    location: "Jaipur, India",
+    type: "Full-time",
+    experience: "3–5 years",
+    description: "Lead BIM modeling for large-scale international projects using Autodesk Revit. Produce LOD 300–400 models for architectural, structural, and MEP disciplines.",
+    tags: ["Revit", "BIM", "LOD 400", "Navisworks", "AutoCAD"],
+    posted: "2 days ago"
+  },
+  {
+    title: "Scan-to-BIM Technician",
+    department: "Scan-to-BIM",
+    icon: "📡",
+    badge: "new",
+    location: "Jaipur, India",
+    type: "Full-time",
+    experience: "2–4 years",
+    description: "Convert 3D point cloud data into accurate BIM models for heritage and retrofit projects. Work with laser scan datasets from global project sites.",
+    tags: ["Point Cloud", "ReCap", "Revit", "3D Scanning", "As-Built"],
+    posted: "5 days ago"
+  },
+  {
+    title: "BIM Automation Engineer",
+    department: "Automation",
+    icon: "⚙️",
+    badge: "new",
+    location: "Jaipur, India (Hybrid)",
+    type: "Full-time",
+    experience: "3–6 years",
+    description: "Develop Dynamo scripts, Revit plugins, and Python-based automation tools to streamline BIM workflows and improve project delivery efficiency.",
+    tags: ["Dynamo", "Python", "Revit API", "C#", "Forge"],
+    posted: "1 week ago"
+  },
+  {
+    title: "Structural BIM Engineer",
+    department: "Structural Engineering",
+    icon: "🔩",
+    badge: "open",
+    location: "Jaipur, India",
+    type: "Full-time",
+    experience: "2–5 years",
+    description: "Create detailed structural BIM models and perform clash detection for steel, concrete, and timber structures on international engineering projects.",
+    tags: ["Tekla", "Revit Structure", "ETABS", "Navisworks", "Steel Detailing"],
+    posted: "1 week ago"
+  },
+  {
+    title: "MEP BIM Coordinator",
+    department: "MEP Coordination",
+    icon: "🔧",
+    badge: "urgent",
+    location: "Jaipur, India",
+    type: "Full-time",
+    experience: "4–7 years",
+    description: "Coordinate MEP systems across multi-discipline BIM models. Lead clash resolution workshops and produce coordinated construction documents.",
+    tags: ["MEP", "Revit MEP", "Navisworks", "BIM 360", "Clash Detection"],
+    posted: "3 days ago"
+  },
+  {
+    title: "Junior BIM Modeler (Trainee)",
+    department: "BIM Solutions",
+    icon: "🎓",
+    badge: "new",
+    location: "Jaipur, India",
+    type: "Full-time",
+    experience: "0–1 year",
+    description: "Entry-level position for fresh graduates in Civil/Architecture. Get trained on Revit, BIM standards, and international project workflows. Mentorship provided.",
+    tags: ["Revit", "AutoCAD", "BIM Basics", "Graduate", "Training"],
+    posted: "1 day ago"
+  }
+];
