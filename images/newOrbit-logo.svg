@@ -1,32 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 90" width="540" height="90">
-  <!-- Transparent background (no fill) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 100" width="620" height="100">
+  <defs>
+    <linearGradient id="faceTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#1565C0;stop-opacity:0.85"/>
+    </linearGradient>
+    <linearGradient id="faceLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E88E5;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:0.95"/>
+    </linearGradient>
+    <linearGradient id="faceRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B6F6;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#0277BD;stop-opacity:0.85"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1"/>
+      <stop offset="60%" style="stop-color:#E3F2FD;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#90CAF9;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="bimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#29B6F6;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#4FC3F7;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
 
-  <!-- 3D Geometric building lattice icon -->
-  <!-- Base shape: diamond/cube outlines suggesting BIM architectural geometry -->
-  <polygon points="38,18 62,30 62,58 38,70 14,58 14,30" fill="none" stroke="#1E90FF" stroke-width="2.2" opacity="0.9"/>
-  <!-- Inner horizontal line (floor plate) -->
-  <line x1="14" y1="44" x2="62" y2="44" stroke="#1E90FF" stroke-width="1.5" opacity="0.7"/>
-  <!-- Vertical center line -->
-  <line x1="38" y1="18" x2="38" y2="70" stroke="#63B3ED" stroke-width="1.5" opacity="0.6"/>
-  <!-- Diagonal cross bracing top-left to center -->
-  <line x1="14" y1="30" x2="62" y2="58" stroke="#1E90FF" stroke-width="1.2" opacity="0.4"/>
-  <line x1="62" y1="30" x2="14" y2="58" stroke="#1E90FF" stroke-width="1.2" opacity="0.4"/>
+  <!-- Ground shadow -->
+  <ellipse cx="50" cy="86" rx="36" ry="5" fill="#1E90FF" opacity="0.18"/>
 
-  <!-- Solid filled core hexagon for depth -->
-  <polygon points="38,28 50,35 50,49 38,56 26,49 26,35" fill="#1E90FF" opacity="0.85"/>
-  <!-- White N monogram inside -->
-  <text x="31" y="48" font-family="Arial Black, Arial, sans-serif" font-size="17" font-weight="900" fill="#ffffff">N</text>
+  <!-- Top face flat roof surface -->
+  <polygon points="50,16 74,28 50,40 26,28" fill="url(#faceTop)" opacity="0.9"/>
+  <!-- Left face -->
+  <polygon points="26,28 50,40 50,78 26,66" fill="url(#faceLeft)"/>
+  <!-- Right face -->
+  <polygon points="74,28 50,40 50,78 74,66" fill="url(#faceRight)"/>
 
-  <!-- Orbital arc sweeping around the icon -->
-  <path d="M 6 44 A 42 20 -15 0 1 72 44" fill="none" stroke="#63B3ED" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
-  <!-- Orbital node dots -->
-  <circle cx="6"  cy="44" r="4" fill="#63B3ED" opacity="0.9"/>
-  <circle cx="72" cy="44" r="4" fill="#1E90FF" opacity="0.9"/>
+  <!-- Floor plate lines left face -->
+  <line x1="26" y1="40" x2="50" y2="52" stroke="#90CAF9" stroke-width="0.8" opacity="0.7"/>
+  <line x1="26" y1="52" x2="50" y2="64" stroke="#90CAF9" stroke-width="0.8" opacity="0.7"/>
+  <!-- Floor plate lines right face -->
+  <line x1="74" y1="40" x2="50" y2="52" stroke="#64B5F6" stroke-width="0.8" opacity="0.6"/>
+  <line x1="74" y1="52" x2="50" y2="64" stroke="#64B5F6" stroke-width="0.8" opacity="0.6"/>
 
-  <!-- NEWORBIT BIM SERVICES wordmark -->
-  <text x="88" y="38" font-family="Arial Black, Arial, sans-serif" font-size="26" font-weight="900" fill="#FFFFFF" letter-spacing="2">NEWORBIT BIM SERVICES</text>
+  <!-- Structural grid verticals left -->
+  <line x1="32" y1="30" x2="32" y2="67" stroke="#90CAF9" stroke-width="0.7" opacity="0.55"/>
+  <line x1="38" y1="33" x2="38" y2="70" stroke="#90CAF9" stroke-width="0.7" opacity="0.55"/>
+  <line x1="44" y1="36" x2="44" y2="73" stroke="#90CAF9" stroke-width="0.7" opacity="0.55"/>
+  <!-- Structural grid verticals right -->
+  <line x1="68" y1="30" x2="68" y2="67" stroke="#64B5F6" stroke-width="0.7" opacity="0.45"/>
+  <line x1="62" y1="33" x2="62" y2="70" stroke="#64B5F6" stroke-width="0.7" opacity="0.45"/>
+  <line x1="56" y1="36" x2="56" y2="73" stroke="#64B5F6" stroke-width="0.7" opacity="0.45"/>
+
+  <!-- Roof grid lines -->
+  <line x1="38" y1="21" x2="62" y2="33" stroke="#B3E5FC" stroke-width="0.7" opacity="0.6"/>
+  <line x1="32" y1="24" x2="56" y2="36" stroke="#B3E5FC" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- Outer wireframe edges -->
+  <line x1="26" y1="28" x2="26" y2="66" stroke="#4FC3F7" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="74" y1="28" x2="74" y2="66" stroke="#4FC3F7" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="50" y1="40" x2="50" y2="78" stroke="#29B6F6" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="26" y1="66" x2="50" y2="78" stroke="#4FC3F7" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="74" y1="66" x2="50" y2="78" stroke="#4FC3F7" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="26" y1="28" x2="50" y2="40" stroke="#81D4FA" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="74" y1="28" x2="50" y2="40" stroke="#81D4FA" stroke-width="1.8" filter="url(#glow)" opacity="0.95"/>
+  <line x1="26" y1="24" x2="50" y2="12" stroke="#B3E5FC" stroke-width="1.5" filter="url(#glow)" opacity="0.9"/>
+  <line x1="74" y1="24" x2="50" y2="12" stroke="#B3E5FC" stroke-width="1.5" filter="url(#glow)" opacity="0.9"/>
+  <line x1="26" y1="24" x2="74" y2="24" stroke="#B3E5FC" stroke-width="1.2" opacity="0.7"/>
+  <line x1="26" y1="24" x2="26" y2="28" stroke="#81D4FA" stroke-width="1.5" opacity="0.8"/>
+  <line x1="74" y1="24" x2="74" y2="28" stroke="#81D4FA" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Corner node dots -->
+  <circle cx="26" cy="28" r="2.5" fill="#4FC3F7" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="74" cy="28" r="2.5" fill="#4FC3F7" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="50" cy="40" r="2.5" fill="#29B6F6" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="26" cy="66" r="2.5" fill="#4FC3F7" opacity="0.9"/>
+  <circle cx="74" cy="66" r="2.5" fill="#4FC3F7" opacity="0.9"/>
+  <circle cx="50" cy="78" r="2.5" fill="#29B6F6" opacity="0.9"/>
+  <circle cx="50" cy="12" r="3" fill="#B3E5FC" filter="url(#softglow)" opacity="1"/>
+  <circle cx="50" cy="12" r="5" fill="none" stroke="#4FC3F7" stroke-width="1" opacity="0.5"/>
+  <circle cx="50" cy="12" r="8" fill="none" stroke="#29B6F6" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- Vertical separator -->
+  <line x1="103" y1="18" x2="103" y2="82" stroke="#1E88E5" stroke-width="1" opacity="0.4"/>
+
+  <!-- NEWORBIT wordmark -->
+  <text x="114" y="46"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="28"
+    font-weight="900"
+    fill="url(#wordGrad)"
+    letter-spacing="3"
+    filter="url(#glow)">NEWORBIT</text>
+
+  <!-- BIM pill badge -->
+  <rect x="114" y="52" width="46" height="18" rx="4" ry="4" fill="#1565C0" opacity="0.9"/>
+  <rect x="114" y="52" width="46" height="18" rx="4" ry="4" fill="none" stroke="#29B6F6" stroke-width="0.8" opacity="0.8"/>
+  <text x="116" y="65"
+    font-family="Arial Black, sans-serif"
+    font-size="11"
+    font-weight="900"
+    fill="url(#bimGrad)"
+    letter-spacing="2">BIM</text>
+
+  <!-- SERVICES text -->
+  <text x="166" y="65"
+    font-family="Arial, sans-serif"
+    font-size="13"
+    font-weight="700"
+    fill="#90CAF9"
+    letter-spacing="3">SERVICES</text>
+
   <!-- Tagline -->
-  <text x="89" y="60" font-family="Arial, sans-serif" font-size="10.5" font-weight="500" fill="#63B3ED" letter-spacing="2.5">BIM SOLUTIONS · AUTOMATION · SCAN-TO-BIM</text>
-  <!-- Thin accent rule under wordmark -->
-  <line x1="88" y1="65" x2="530" y2="65" stroke="#1E90FF" stroke-width="1" opacity="0.45"/>
+  <text x="115" y="80"
+    font-family="Arial, sans-serif"
+    font-size="8.5"
+    font-weight="400"
+    fill="#4FC3F7"
+    letter-spacing="2.2"
+    opacity="0.85">BIM SOLUTIONS · SCAN-TO-BIM · AUTOMATION</text>
+
+  <!-- Accent rule -->
+  <line x1="114" y1="49" x2="610" y2="49" stroke="#1E88E5" stroke-width="0.7" opacity="0.35"/>
+
 </svg>
