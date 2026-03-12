@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Central Mechanical LLC - Leading MEP engineering and BIM solutions provider. HVAC, Electrical, Plumbing design, BIM modeling, Scan to BIM, and MEP automation services.">
+  <title>Central Mechanical LLC | MEP Engineering &amp; BIM Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="38" height="38" rx="8" fill="#003d7a"/>
+        <path d="M19 6L8 12v14l11 6 11-6V12L19 6z" fill="none" stroke="#7ac3ff" stroke-width="1.5"/>
+        <path d="M19 6v20M8 12l11 6 11-6" stroke="#7ac3ff" stroke-width="1.5"/>
+        <circle cx="19" cy="19" r="3" fill="#1a7fd4"/>
+        <path d="M13 22v4M25 22v4" stroke="#7ac3ff" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>Central Mechanical LLC</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="dropdown-menu">
+          <li><a href="mep-services.html">MEP Services</a></li>
+          <li><a href="bim-services.html">BIM Services</a></li>
+          <li><a href="scan-to-bim.html">Scan to BIM</a></li>
+          <li><a href="mep-automation.html">MEP Automation</a></li>
+        </ul>
+      </li>
+      <li><a href="lod-services.html">LOD Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="technologies.html">Technologies</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html" class="nav-btn">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-text animate-fadeInUp">
+      <div class="hero-label">MEP Engineering &amp; BIM Excellence</div>
+      <h1>Engineering Excellence in <span>MEP &amp; BIM</span> Solutions</h1>
+      <p class="hero-subtitle">Delivering precision-engineered MEP designs and cutting-edge BIM solutions for complex construction projects worldwide.</p>
+      <div class="hero-actions">
+        <a href="mep-services.html" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Explore Our Services
+        </a>
+        <a href="projects.html" class="btn btn-secondary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          View Projects
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual animate-float" aria-hidden="true">
+      <svg width="480" height="420" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Building structure -->
+        <rect x="120" y="60" width="240" height="310" rx="4" fill="rgba(255,255,255,0.06)" stroke="rgba(122,195,255,0.4)" stroke-width="1.5"/>
+        <!-- Floors -->
+        <line x1="120" y1="120" x2="360" y2="120" stroke="rgba(122,195,255,0.25)" stroke-width="1"/>
+        <line x1="120" y1="180" x2="360" y2="180" stroke="rgba(122,195,255,0.25)" stroke-width="1"/>
+        <line x1="120" y1="240" x2="360" y2="240" stroke="rgba(122,195,255,0.25)" stroke-width="1"/>
+        <line x1="120" y1="300" x2="360" y2="300" stroke="rgba(122,195,255,0.25)" stroke-width="1"/>
+        <!-- Windows -->
+        <rect x="140" y="75" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.5)" stroke-width="1"/>
+        <rect x="180" y="75" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.5)" stroke-width="1"/>
+        <rect x="220" y="75" width="28" height="20" rx="2" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.5)" stroke-width="1"/>
+        <rect x="260" y="75" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.5)" stroke-width="1"/>
+        <rect x="300" y="75" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.5)" stroke-width="1"/>
+        <!-- Repeat windows for each floor -->
+        <rect x="140" y="135" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="180" y="135" width="28" height="20" rx="2" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="220" y="135" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="260" y="135" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="300" y="135" width="28" height="20" rx="2" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="140" y="195" width="28" height="20" rx="2" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="180" y="195" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="220" y="195" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="260" y="195" width="28" height="20" rx="2" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <rect x="300" y="195" width="28" height="20" rx="2" fill="rgba(26,127,212,0.3)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <!-- MEP lines (HVAC ducts) -->
+        <path d="M80 160 H120 M360 160 H400" stroke="#1a7fd4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M80 220 H120 M360 220 H420" stroke="#1a7fd4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M80 280 H120 M360 280 H400" stroke="#1a7fd4" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Pipe symbols -->
+        <circle cx="77" cy="160" r="6" fill="none" stroke="#1a7fd4" stroke-width="2"/>
+        <circle cx="403" cy="160" r="6" fill="none" stroke="#1a7fd4" stroke-width="2"/>
+        <circle cx="77" cy="220" r="6" fill="none" stroke="#1a7fd4" stroke-width="2"/>
+        <!-- Electrical lines -->
+        <path d="M420 100 V370 M60 100 V370" stroke="rgba(255,220,50,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Ground -->
+        <rect x="80" y="370" width="320" height="12" rx="4" fill="rgba(122,195,255,0.2)" stroke="rgba(122,195,255,0.4)" stroke-width="1"/>
+        <!-- Roof equipment -->
+        <rect x="160" y="42" width="50" height="20" rx="3" fill="rgba(26,127,212,0.5)" stroke="rgba(122,195,255,0.6)" stroke-width="1.5"/>
+        <rect x="225" y="38" width="40" height="24" rx="3" fill="rgba(26,127,212,0.5)" stroke="rgba(122,195,255,0.6)" stroke-width="1.5"/>
+        <rect x="280" y="44" width="45" height="18" rx="3" fill="rgba(26,127,212,0.4)" stroke="rgba(122,195,255,0.5)" stroke-width="1.5"/>
+        <!-- Dimension lines -->
+        <line x1="50" y1="60" x2="50" y2="370" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="44" y1="60" x2="56" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="44" y1="370" x2="56" y2="370" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <!-- BIM grid overlay -->
+        <line x1="120" y1="60" x2="120" y2="370" stroke="rgba(122,195,255,0.15)" stroke-width="0.5"/>
+        <line x1="200" y1="60" x2="200" y2="370" stroke="rgba(122,195,255,0.15)" stroke-width="0.5"/>
+        <line x1="280" y1="60" x2="280" y2="370" stroke="rgba(122,195,255,0.15)" stroke-width="0.5"/>
+        <line x1="360" y1="60" x2="360" y2="370" stroke="rgba(122,195,255,0.15)" stroke-width="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:3rem;">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Comprehensive MEP &amp; BIM Services</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">From concept to completion, we provide end-to-end engineering solutions for your most demanding projects.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card service-card fade-in">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3>MEP Engineering</h3>
+        <p>Complete Mechanical, Electrical, and Plumbing design services for commercial, healthcare, industrial, and residential projects.</p>
+        <a href="mep-services.html" class="card-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="card service-card fade-in delay-1">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l5 3 5-3"/></svg>
+        </div>
+        <h3>BIM Modeling</h3>
+        <p>High-accuracy 3D BIM models with full clash detection, multi-discipline coordination, and construction documentation.</p>
+        <a href="bim-services.html" class="card-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="card service-card fade-in delay-2">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <h3>Scan to BIM</h3>
+        <p>Precision laser scanning converted to intelligent BIM models for renovations, retrofits, and as-built documentation.</p>
+        <a href="scan-to-bim.html" class="card-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="card service-card fade-in delay-3">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>MEP Automation</h3>
+        <p>Custom Dynamo scripts, Revit API plugins, and digital twin technology to automate and streamline your MEP workflows.</p>
+        <a href="mep-automation.html" class="card-link">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <div class="stat-number"><span class="counter" data-target="500" data-suffix="+">500+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item fade-in delay-1">
+        <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">50+</span></div>
+        <div class="stat-label">MEP Experts</div>
+      </div>
+      <div class="stat-item fade-in delay-2">
+        <div class="stat-number"><span class="counter" data-target="15" data-suffix="+">15+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item fade-in delay-3">
+        <div class="stat-number"><span class="counter" data-target="100" data-suffix="%">100%</span></div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:3rem;">
+      <div class="section-label">Why Central Mechanical</div>
+      <h2 class="section-title">The Difference Is in the Details</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-3">
+      <div class="feature-item fade-in">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <h4>Proven Expertise</h4>
+          <p style="margin:0;font-size:0.9rem;">15+ years of delivering complex MEP engineering and BIM projects across healthcare, commercial, and industrial sectors with licensed PEs in 15 states.</p>
+        </div>
+      </div>
+      <div class="feature-item fade-in delay-1">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <h4>Cutting-Edge Technology</h4>
+          <p style="margin:0;font-size:0.9rem;">We leverage Autodesk Revit, Navisworks, Dynamo scripting, and the latest laser scanning equipment to deliver precise, coordinated models every time.</p>
+        </div>
+      </div>
+      <div class="feature-item fade-in delay-2">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>On-Time Delivery</h4>
+          <p style="margin:0;font-size:0.9rem;">Our disciplined project management and automated workflows ensure deliverables are on schedule — every time — without compromising on quality or accuracy.</p>
+        </div>
+      </div>
+      <div class="feature-item fade-in delay-1">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Client-Centered Approach</h4>
+          <p style="margin:0;font-size:0.9rem;">We partner closely with owners, architects, and contractors to align our work with project goals — transparent communication from kickoff to closeout.</p>
+        </div>
+      </div>
+      <div class="feature-item fade-in delay-2">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Quality &amp; Compliance</h4>
+          <p style="margin:0;font-size:0.9rem;">ISO 9001:2015 certified processes and ASHRAE/SMACNA standards compliance ensure every deliverable meets the highest quality and code requirements.</p>
+        </div>
+      </div>
+      <div class="feature-item fade-in delay-3">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003d7a" stroke-width="2"><leaf/><path d="M3 15l4-4 4 4 4-6 4 4"/><path d="M21 12V5H3v14h8"/></svg>
+        </div>
+        <div>
+          <h4>Sustainable Design</h4>
+          <p style="margin:0;font-size:0.9rem;">Energy modeling, LEED support, and sustainable MEP design solutions that reduce operational costs and environmental impact throughout the building lifecycle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:3rem;">
+      <div class="section-label">Featured Work</div>
+      <h2 class="section-title">Recent Projects</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">A selection of our most complex and impactful MEP and BIM projects.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="project-card fade-in">
+        <div class="project-image">
+          <svg width="160" height="140" viewBox="0 0 160 140" fill="none">
+            <rect x="30" y="20" width="100" height="90" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <rect x="42" y="30" width="16" height="12" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="66" y="30" width="16" height="12" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="90" y="30" width="16" height="12" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="42" y="50" width="16" height="12" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="66" y="50" width="16" height="12" rx="1" fill="rgba(255,255,255,0.35)"/>
+            <rect x="90" y="50" width="16" height="12" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="42" y="70" width="16" height="12" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="66" y="70" width="16" height="12" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="90" y="70" width="16" height="12" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="60" y="90" width="40" height="20" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <path d="M10 110h140" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+            <rect x="5" y="14" width="150" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+          </svg>
+        </div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge badge-primary">Healthcare</span><span class="badge badge-accent">LOD 400</span></div>
+          <h3>Houston Methodist Hospital Expansion</h3>
+          <p>Complete MEP BIM coordination for 8-story hospital expansion, 450,000 sq ft. Full clash detection and construction coordination.</p>
+          <div class="project-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Houston, TX
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-in delay-1">
+        <div class="project-image" style="background:linear-gradient(135deg,#0056a8,#1a7fd4)">
+          <svg width="160" height="140" viewBox="0 0 160 140" fill="none">
+            <rect x="55" y="10" width="50" height="110" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <rect x="60" y="18" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="74" y="18" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="88" y="18" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="60" y="32" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="74" y="32" width="10" height="8" rx="1" fill="rgba(255,255,255,0.35)"/>
+            <rect x="88" y="32" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="60" y="46" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="74" y="46" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="88" y="46" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="60" y="60" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="74" y="60" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="88" y="60" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="60" y="74" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="74" y="74" width="10" height="8" rx="1" fill="rgba(255,255,255,0.25)"/>
+            <rect x="88" y="74" width="10" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="68" y="100" width="24" height="20" rx="1" fill="rgba(255,255,255,0.2)"/>
+            <path d="M10 120h140" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge badge-primary">Commercial</span><span class="badge badge-accent">LOD 350</span></div>
+          <h3>Downtown Houston Tower</h3>
+          <p>Full MEP design and BIM modeling for 32-story class-A office tower. 4D scheduling and cost integration included.</p>
+          <div class="project-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Houston, TX
+          </div>
+        </div>
+      </div>
+      <div class="project-card fade-in delay-2">
+        <div class="project-image" style="background:linear-gradient(135deg,#00264d,#003d7a)">
+          <svg width="160" height="140" viewBox="0 0 160 140" fill="none">
+            <rect x="20" y="50" width="120" height="70" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <rect x="20" y="35" width="30" height="20" rx="2" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <rect x="60" y="30" width="40" height="25" rx="2" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <rect x="110" y="38" width="30" height="17" rx="2" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <line x1="20" y1="70" x2="140" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="20" y1="90" x2="140" y2="90" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="20" y1="110" x2="140" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <path d="M5 120h150" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"/>
+            <circle cx="35" cy="25" r="6" fill="none" stroke="rgba(26,127,212,0.8)" stroke-width="2"/>
+            <circle cx="80" cy="20" r="8" fill="none" stroke="rgba(26,127,212,0.8)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge badge-primary">Industrial</span><span class="badge badge-accent">LOD 300</span></div>
+          <h3>ExxonMobil Corporate Campus</h3>
+          <p>MEP engineering for 3-million sq ft corporate campus with complex mechanical and electrical systems coordination.</p>
+          <div class="project-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Spring, TX
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:2.5rem;">
+      <a href="projects.html" class="btn btn-outline btn-lg">View All 500+ Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:3rem;">
+      <div class="section-label">Client Feedback</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-3">
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">"Central Mechanical delivered our hospital expansion BIM model ahead of schedule with zero major clashes in the final coordination review. Their attention to detail is unmatched."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="display:flex;align-items:center;justify-content:center;">
+            <svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="18" r="10" fill="rgba(255,255,255,0.3)"/><ellipse cx="23" cy="38" rx="15" ry="8" fill="rgba(255,255,255,0.2)"/></svg>
+          </div>
+          <div class="testimonial-author-info">
+            <strong>Dr. Robert Hawkins</strong>
+            <span>VP Facilities, Houston Methodist</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in delay-1">
+        <p class="testimonial-text">"The Scan to BIM work Central Mechanical performed on our existing facility gave us incredible accuracy. We were able to plan the renovation with total confidence in the as-built conditions."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#0056a8,#1a7fd4);display:flex;align-items:center;justify-content:center;">
+            <svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="18" r="10" fill="rgba(255,255,255,0.3)"/><ellipse cx="23" cy="38" rx="15" ry="8" fill="rgba(255,255,255,0.2)"/></svg>
+          </div>
+          <div class="testimonial-author-info">
+            <strong>Lisa Chen, AIA</strong>
+            <span>Principal, Gensler Houston</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in delay-2">
+        <p class="testimonial-text">"Their MEP automation tools cut our coordination time by 40%. The custom Dynamo scripts they developed have become an integral part of our standard workflow on every project."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#00264d,#003d7a);display:flex;align-items:center;justify-content:center;">
+            <svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="18" r="10" fill="rgba(255,255,255,0.3)"/><ellipse cx="23" cy="38" rx="15" ry="8" fill="rgba(255,255,255,0.2)"/></svg>
+          </div>
+          <div class="testimonial-author-info">
+            <strong>Marcus Webb</strong>
+            <span>BIM Manager, Turner Construction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);">Start a Conversation</div>
+    <h2>Ready to Start Your Project?</h2>
+    <p>Let's discuss how Central Mechanical LLC can bring precision, efficiency, and innovation to your next MEP or BIM project.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Get a Free Consultation
+      </a>
+      <a href="mep-services.html" class="btn btn-secondary btn-lg">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Central Mechanical LLC</div>
+        <p>Leading MEP engineering and BIM solutions provider since 2009. Delivering precision, innovation, and excellence on every project.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="mep-services.html">MEP Services</a></li>
+          <li><a href="bim-services.html">BIM Services</a></li>
+          <li><a href="scan-to-bim.html">Scan to BIM</a></li>
+          <li><a href="lod-services.html">LOD Services</a></li>
+          <li><a href="mep-automation.html">MEP Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="technologies.html">Technologies</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>123 Engineering Blvd<br>Houston, TX 77001</p>
+        <p>+1 (713) 555-0190</p>
+        <p>info@centralmechanical.com</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:rgba(255,255,255,0.45);">Mon–Fri: 7:00 AM – 6:00 PM CST</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Central Mechanical LLC. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
