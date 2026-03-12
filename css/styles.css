@@ -375,7 +375,7 @@ section { padding: 100px 0; }
   padding-top: 14px; border-top: 1px solid var(--border);
 }
 .card-location { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
-.card-budget { font-size: 0.95rem; font-weight: 700; color: var(--accent); }
+/* .card-budget removed */
 
 /* Load more */
 .load-more-wrap { text-align: center; margin-top: 40px; }
@@ -812,3 +812,30 @@ footer {
 .fade-in-d1 { animation-delay: 0.1s; }
 .fade-in-d2 { animation-delay: 0.2s; }
 .fade-in-d3 { animation-delay: 0.3s; }
+
+/* ── Animated Building Logo ─────────────────────────────────── */
+.building-logo svg { display: block; }
+.building-logo--sm svg { height: 46px; width: auto; }
+.building-logo--md svg { height: 80px; width: auto; }
+.building-logo--xs svg { height: 38px; width: auto; }
+
+@keyframes winBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+@keyframes buildingPulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(30,144,255,0.5)); }
+  50%       { filter: drop-shadow(0 0 18px rgba(30,144,255,0.9)); }
+}
+@keyframes antennaBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95%            { opacity: 0; }
+}
+
+.building-logo svg { animation: buildingPulse 3s ease-in-out infinite; }
+.win { opacity: 0.9; }
+.win1 { animation: winBlink 2.5s 0.0s ease-in-out infinite; }
+.win2 { animation: winBlink 2.5s 0.6s ease-in-out infinite; }
+.win3 { animation: winBlink 2.5s 1.2s ease-in-out infinite; }
+.win4 { animation: winBlink 2.5s 1.8s ease-in-out infinite; }
+.antenna-blink { animation: antennaBlink 1.8s ease-in-out infinite; }
