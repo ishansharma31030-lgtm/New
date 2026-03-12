@@ -57,6 +57,22 @@ const LOCATIONS_NEARBY = [
   "Kukas Industrial Area, Jaipur", "Vishwakarma Industrial, Jaipur"
 ];
 
+// Determine project's actual origin city from its title and client
+function getProjectOrigin(p, idx) {
+  const combined = (p.title + ' ' + p.client).toLowerCase();
+  if (combined.includes('jodhpur'))             return "Jodhpur, Rajasthan";
+  if (combined.includes('jnu') || combined.includes('new delhi') || combined.includes('delhi ncr')) return "New Delhi, India";
+  if (combined.includes('mumbai'))               return "Mumbai, Maharashtra";
+  if (combined.includes('bangalore') || combined.includes('bengaluru')) return "Bengaluru, Karnataka";
+  if (combined.includes('hyderabad'))            return "Hyderabad, Telangana";
+  if (combined.includes('pune'))                 return "Pune, Maharashtra";
+  if (combined.includes('chennai'))              return "Chennai, Tamil Nadu";
+  if (combined.includes('kolkata'))              return "Kolkata, West Bengal";
+  if (combined.includes('ahmedabad'))            return "Ahmedabad, Gujarat";
+  // Default: Jaipur neighbourhood based on index
+  return LOCATIONS_NEARBY[idx % LOCATIONS_NEARBY.length];
+}
+
 // Unsplash placeholder images for projects (architectural/BIM/engineering)
 const PROJECT_IMAGES = [
   "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80",
@@ -356,7 +372,7 @@ const rawProjects = [
 const PROJECTS = rawProjects.map((p, idx) => ({
   ...p,
   origin: "Jaipur, Rajasthan, India",
-  location: LOCATIONS_NEARBY[idx % LOCATIONS_NEARBY.length],
+  location: getProjectOrigin(p, idx),
   image: getImage(idx),
   gallery: getExtraImages(idx),
   description: `A landmark ${p.category} engagement for ${p.client} executed by NewOrbit Services from our Jaipur headquarters. The project involved cutting-edge digital engineering, delivering ${p.status === "Completed" ? "on time with exceptional client satisfaction" : p.status === "Ongoing" ? "active execution with rigorous quality control" : "detailed planning and stakeholder alignment"}.`,
