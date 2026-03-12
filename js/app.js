@@ -288,10 +288,10 @@
   }
 
   // ── Events ────────────────────────────────────────────────────────────────
-  const SEARCH_DEBOUNCE_MS = 280;
+  const SEARCH_DEBOUNCE_DELAY_MS = 280;
 
   function attachEvents() {
-    searchInput.addEventListener('input', debounce(applyFilters, SEARCH_DEBOUNCE_MS));
+    searchInput.addEventListener('input', debounce(applyFilters, SEARCH_DEBOUNCE_DELAY_MS));
     catFilter.addEventListener('change', applyFilters);
     statusFilter.addEventListener('change', applyFilters);
     yearFilter.addEventListener('change', applyFilters);
