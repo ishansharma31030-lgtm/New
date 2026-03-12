@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <!-- Orbit ring -->
+  <ellipse cx="45" cy="40" rx="38" ry="16" fill="none" stroke="#1E90FF" stroke-width="3" opacity="0.85"/>
+  <!-- Planet core -->
+  <circle cx="45" cy="40" r="14" fill="#1E90FF" opacity="0.95"/>
+  <!-- Orbit satellite dot -->
+  <circle cx="83" cy="40" r="5" fill="#63B3ED"/>
+  <!-- N letter in planet -->
+  <text x="38" y="45" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900" fill="white">N</text>
+  <!-- Company Name -->
+  <text x="100" y="33" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="1">NewOrbit</text>
+  <text x="100" y="58" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#63B3ED" letter-spacing="3">SERVICES</text>
+</svg>
