@@ -16,7 +16,7 @@ const COMPANY = {
   },
   founded: "2021",
   projects_delivered: "200+",
-  clients_served: "150+",
+  clients_served: "32+",
   countries: "12+"
 };
 
