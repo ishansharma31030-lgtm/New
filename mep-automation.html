@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MEP Automation & Digital Engineering — Dynamo scripts, Revit API development, digital twins, and IoT integration by Central Mechanical LLC." />
+  <title>MEP Automation — Central Mechanical LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#1a7fd4"/><path d="M20 8L20 32M8 20L32 20M12 12L28 28M28 12L12 28" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="5" fill="white" fill-opacity="0.9"/><circle cx="20" cy="20" r="2" fill="#1a7fd4"/></svg><span>Central Mechanical LLC</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="dropdown-menu">
+          <li><a href="mep-services.html">MEP Services</a></li>
+          <li><a href="bim-services.html">BIM Services</a></li>
+          <li><a href="scan-to-bim.html">Scan to BIM</a></li>
+          <li><a href="mep-automation.html">MEP Automation</a></li>
+        </ul>
+      </li>
+      <li><a href="lod-services.html">LOD Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="technologies.html">Technologies</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html" class="nav-btn">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="#">Services</a><span>/</span><span>MEP Automation</span></div>
+    <h1>MEP Automation &amp; Digital Engineering</h1>
+    <p>Supercharging MEP workflows with custom Dynamo scripts, Revit API plugins, digital twins, and IoT integration — delivering productivity gains up to 60%.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:center;">
+      <div class="fade-in-up">
+        <span class="section-tag" style="display:inline-block;margin-bottom:1rem;">Why Automate?</span>
+        <h2>The Power of MEP Digital Engineering</h2>
+        <p>Manual MEP modeling and documentation processes are time-consuming, error-prone, and inconsistent. Central Mechanical's automation team develops bespoke tools that transform these workflows, enabling our engineers and our clients' teams to work faster, smarter, and with greater accuracy.</p>
+        <p>From one-click automated pipe sizing to fully integrated IoT digital twins, our automation capabilities span the entire MEP project lifecycle.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;">
+          <div style="text-align:center;padding:1.5rem;background:var(--light-blue);border-radius:var(--radius-lg);border:1px solid var(--border);">
+            <div style="font-size:2rem;font-weight:900;color:var(--primary);">60%</div>
+            <div style="font-size:0.85rem;color:var(--text-gray);margin-top:0.25rem;">Productivity Increase</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--light-blue);border-radius:var(--radius-lg);border:1px solid var(--border);">
+            <div style="font-size:2rem;font-weight:900;color:var(--primary);">85%</div>
+            <div style="font-size:0.85rem;color:var(--text-gray);margin-top:0.25rem;">Error Reduction</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--light-blue);border-radius:var(--radius-lg);border:1px solid var(--border);">
+            <div style="font-size:2rem;font-weight:900;color:var(--primary);">3×</div>
+            <div style="font-size:0.85rem;color:var(--text-gray);margin-top:0.25rem;">Faster Documentation</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in-up delay-2" style="background:var(--gradient-dark);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;">
+        <svg width="260" height="220" viewBox="0 0 260 220" fill="none">
+          <!-- Node graph visualization -->
+          <circle cx="130" cy="110" r="20" fill="#1a7fd4" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+          <text x="130" y="114" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif" font-weight="700">AUTO</text>
+          <!-- Connected nodes -->
+          <circle cx="50" cy="60" r="14" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="50" y="64" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">HVAC</text>
+          <circle cx="50" cy="160" r="14" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="50" y="164" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">ELEC</text>
+          <circle cx="210" cy="60" r="14" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="210" y="64" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">BIM</text>
+          <circle cx="210" cy="160" r="14" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="210" y="164" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">IoT</text>
+          <circle cx="130" cy="30" r="14" fill="rgba(26,127,212,0.5)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="130" y="34" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">Revit</text>
+          <circle cx="130" cy="190" r="14" fill="rgba(26,127,212,0.5)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+          <text x="130" y="194" text-anchor="middle" fill="white" font-size="6" font-family="sans-serif">Data</text>
+          <!-- Connecting lines -->
+          <line x1="116" y1="94" x2="62" y2="72" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <line x1="116" y1="126" x2="62" y2="148" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <line x1="144" y1="94" x2="198" y2="72" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <line x1="144" y1="126" x2="198" y2="148" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <line x1="130" y1="90" x2="130" y2="44" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <line x1="130" y1="130" x2="130" y2="176" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 2"/>
+        </svg>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.85rem;margin:1rem 0 0;">Automated MEP Digital Engineering Ecosystem</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <span class="section-tag">Automation Services</span>
+      <h2>Our Digital Engineering Capabilities</h2>
+      <p>Six specialized service lines covering the full spectrum of MEP automation and digital engineering solutions.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in-up delay-1">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="2" stroke="#003d7a" stroke-width="1.5" fill="#e8f4fd"/><rect x="18" y="4" width="10" height="10" rx="2" stroke="#003d7a" stroke-width="1.5" fill="#e8f4fd"/><rect x="11" y="18" width="10" height="10" rx="2" stroke="#003d7a" stroke-width="1.5" fill="#e8f4fd"/><path d="M9 14v4M23 14v4M16 14V8" stroke="#1a7fd4" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Dynamo Scripts</h3>
+        <p>Custom Dynamo visual programming scripts for automated MEP tasks — pipe sizing, equipment placement, schedule generation, and complex parametric workflows.</p>
+        <a href="contact.html" class="card-link">Get a Script <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-card fade-in-up delay-2">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#003d7a" stroke-width="1.5"/><path d="M9 12l5 5-5 5M15 22h8" stroke="#1a7fd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Revit API Development</h3>
+        <p>.NET-based Revit API plugins tailored to your firm's specific workflows — custom tools, add-ins, automated checking, and documentation generation.</p>
+        <a href="contact.html" class="card-link">Request a Plugin <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-card fade-in-up delay-3">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#003d7a" stroke-width="1.5" fill="#e8f4fd"/><path d="M10 16h12M16 10v12" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="12" r="3" fill="#e53e3e" fill-opacity="0.3" stroke="#e53e3e" stroke-width="1.5"/></svg></div>
+        <h3>Automated Clash Detection</h3>
+        <p>Scheduled Navisworks clash runs with automated report generation, issue tracking in BIM 360, and notification workflows to keep coordination teams aligned.</p>
+        <a href="contact.html" class="card-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-card fade-in-up delay-1">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 8h24v16H4z" stroke="#003d7a" stroke-width="1.5" rx="2" fill="#e8f4fd"/><circle cx="16" cy="16" r="5" stroke="#1a7fd4" stroke-width="1.5"/><path d="M16 4v4M16 24v4M4 16H0M32 16h-4" stroke="#003d7a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>BIM 360 / ACC Integration</h3>
+        <p>Cloud collaboration setup, automated issue tracking workflows, custom dashboards, and API integration between Autodesk Construction Cloud and your PM systems.</p>
+        <a href="contact.html" class="card-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-card fade-in-up delay-2">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 26V16l10-8 10 8v10" stroke="#003d7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#e8f4fd"/><rect x="12" y="18" width="8" height="8" rx="1" fill="#e8f4fd" stroke="#1a7fd4" stroke-width="1.5"/><circle cx="24" cy="10" r="4" fill="#003d7a" fill-opacity="0.15" stroke="#1a7fd4" stroke-width="1.5"/><path d="M22 10h4M24 8v4" stroke="#1a7fd4" stroke-width="1" stroke-linecap="round"/></svg></div>
+        <h3>Digital Twin Technology</h3>
+        <p>Creating real-time, data-driven digital representations of buildings that link live sensor data, operational systems, and BIM models for informed facility management.</p>
+        <a href="contact.html" class="card-link">Explore Digital Twins <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-card fade-in-up delay-3">
+        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4a4 4 0 014 4v1a4 4 0 01-8 0V8a4 4 0 014-4z" stroke="#003d7a" stroke-width="1.5" fill="#e8f4fd"/><path d="M4 24c0-4 2.7-7.4 6.4-8.7M21.6 15.3C25.3 16.6 28 20 28 24" stroke="#1a7fd4" stroke-width="1.5" stroke-linecap="round"/><path d="M16 13v4M14 28h4" stroke="#003d7a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>IoT Sensor Integration</h3>
+        <p>Connecting building sensors, BMS/BAS systems, and IoT devices to the BIM-based digital twin via Azure IoT Hub for real-time monitoring and predictive maintenance.</p>
+        <a href="contact.html" class="card-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
+      <div class="fade-in-up">
+        <span class="section-tag" style="display:inline-block;margin-bottom:1rem;">Use Cases</span>
+        <h2>Automation Use Cases</h2>
+        <p style="margin-bottom:1.5rem;">Real-world automation tasks we've built for MEP firms and owners, delivering immediate ROI.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Automated pipe/duct sizing from flow calculations</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Equipment tag placement automation</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Automated sheet creation and numbering</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Automated section and elevation creation</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Space scheduling and area calculation automation</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Automated quantity takeoffs for cost estimation</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;align-items:center;padding:0.75rem 1rem;background:var(--light-blue);border-radius:var(--radius);border:1px solid var(--border);">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="#003d7a"/><path d="M5 9l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:0.9rem;">Scheduled clash report generation and distribution</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in-up delay-2">
+        <span class="section-tag" style="display:inline-block;margin-bottom:1rem;">Tools &amp; Technologies</span>
+        <h2>Our Automation Tech Stack</h2>
+        <p style="margin-bottom:1.5rem;">We use industry-leading tools and open APIs to build reliable, maintainable automation solutions.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Dynamo</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Visual programming</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Python</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Scripting &amp; automation</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Revit API (.NET/C#)</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Custom plugins</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Forge / APS API</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Cloud BIM apps</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Power Automate</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Workflow automation</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Azure IoT Hub</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">IoT sensor data</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">Power BI</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Data dashboards</div>
+          </div>
+          <div style="padding:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;">
+            <div style="font-weight:700;color:var(--primary);font-size:0.9rem;margin-bottom:0.25rem;">BIM 360 API</div>
+            <div style="font-size:0.78rem;color:var(--text-light);">Cloud integration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container fade-in-up">
+    <h2>Ready to Automate Your MEP Workflows?</h2>
+    <p>Tell us about your most time-consuming MEP tasks. Our automation team will design a custom solution that fits your workflow and delivers measurable ROI.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-primary btn-lg">Start Your Automation Project</a>
+      <a href="technologies.html" class="btn btn-outline btn-lg">View Technologies</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-col"><div class="footer-logo">Central Mechanical LLC</div><p>Leading MEP engineering and BIM solutions provider since 2021. Delivering precision, innovation, and excellence on every project.</p><div class="footer-social"><a href="#" class="social-link" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a><a href="#" class="social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a><a href="#" class="social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a></div></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="mep-services.html">MEP Services</a></li><li><a href="bim-services.html">BIM Services</a></li><li><a href="scan-to-bim.html">Scan to BIM</a></li><li><a href="lod-services.html">LOD Services</a></li><li><a href="mep-automation.html">MEP Automation</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="technologies.html">Technologies</a></li><li><a href="team.html">Our Team</a></li><li><a href="careers.html">Careers</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p>123 Engineering Plaza<br>Jaipur, Rajasthan 302001, India</p><p>+91 141 555-0190</p><p>info@centralmechanical.com</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Central Mechanical LLC. All Rights Reserved.</p><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
