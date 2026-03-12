@@ -77,7 +77,7 @@ img { display: block; max-width: 100%; }
 .nav-logo img { height: 36px; width: auto; filter: drop-shadow(0 0 8px rgba(30,144,255,0.5)); }
 .nav-brand-text { display: flex; flex-direction: column; }
 .nav-brand-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; }
-.nav-brand-tagline { font-size: 0.55rem; color: var(--accent-light); letter-spacing: 2px; font-weight: 600; white-space: nowrap; }
+.nav-brand-tagline { font-size: 0.45rem; color: var(--accent-light); letter-spacing: 1px; font-weight: 600; white-space: nowrap; }
 
 .nav-links {
   display: flex; align-items: center; gap: 8px; list-style: none;
