@@ -19,6 +19,7 @@
   const statsSection  = document.getElementById('stats');
   const catGrid       = document.getElementById('cat-grid');
   const testimonialsEl= document.getElementById('testimonials-list');
+  const careersGrid   = document.getElementById('careers-grid');
   const contactForm   = document.getElementById('contact-form');
   const formSuccess   = document.getElementById('form-success');
   const backTop       = document.getElementById('back-top');
@@ -63,6 +64,7 @@
     renderStats();
     renderCategories();
     renderTestimonials();
+    renderCareers();
     applyFilters();
     attachEvents();
     animateHeroCounters();
@@ -284,6 +286,46 @@
             <div class="testimonial-role">${t.designation}</div>
           </div>
         </div>
+      </div>`).join('');
+  }
+
+  // ── Careers ────────────────────────────────────────────────────────────────
+  function renderCareers() {
+    if (!careersGrid || typeof VACANCIES === 'undefined') return;
+    careersGrid.innerHTML = VACANCIES.map(v => `
+      <div class="career-card">
+        <div class="career-header">
+          <span class="career-icon">${v.icon}</span>
+          <span class="career-badge ${v.badge}">${v.badge === 'urgent' ? '🔴 Urgent' : v.badge === 'new' ? '🟢 New' : '🔵 Open'}</span>
+        </div>
+        <div class="career-title">${v.title}</div>
+        <div class="career-dept">${v.department}</div>
+        <p class="career-desc">${v.description}</p>
+        <div class="career-meta">
+          <span class="career-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${v.location}
+          </span>
+          <span class="career-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ${v.type}
+          </span>
+          <span class="career-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            ${v.experience}
+          </span>
+          <span class="career-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${v.posted}
+          </span>
+        </div>
+        <div class="career-tags">
+          ${v.tags.map(t => `<span class="career-tag">${t}</span>`).join('')}
+        </div>
+        <a href="#contact" class="career-apply">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Apply Now
+        </a>
       </div>`).join('');
   }
 
