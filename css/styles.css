@@ -332,6 +332,68 @@ select.form-control { cursor: pointer; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
+/* CONTACT PAGE */
+.contact-section { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: start; }
+.contact-info-card { background: var(--gradient); border-radius: var(--radius-lg); padding: 2rem; color: var(--white); }
+.contact-info-card h3, .contact-info-card h5 { color: var(--white); }
+.contact-info-card p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
+.contact-item, .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+.contact-item-icon, .contact-info-icon { width: 44px; height: 44px; min-width: 44px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+/* FORM FEEDBACK */
+.error-msg { display: none; color: #c0392b; font-size: 0.82rem; margin-top: 4px; }
+.error-msg.visible { display: block; }
+.form-success { display: none; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: var(--radius); padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.95rem; }
+.form-success.visible { display: block; }
+
+/* BENEFITS GRID (CAREERS) */
+.benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.benefit-item { display: flex; align-items: flex-start; gap: 1rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.benefit-icon { width: 44px; height: 44px; min-width: 44px; background: var(--light-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+/* APPLICATION STEPS (CAREERS) */
+.app-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; }
+.app-step { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1rem; }
+.app-step-num { width: 48px; height: 48px; background: var(--gradient); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; margin: 0 auto 1rem; }
+
+/* LOD PAGE */
+.lod-tabs { margin-top: 2.5rem; }
+.tab-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; border-bottom: 2px solid var(--border); margin-bottom: 2rem; padding-bottom: 0; }
+.lod-detail-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.lod-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+.lod-progress { display: flex; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.lod-progress-item { flex: 1; min-width: 80px; text-align: center; }
+
+/* TECHNOLOGIES PAGE */
+.software-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.software-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; box-shadow: var(--shadow); transition: var(--transition); }
+.software-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.software-icon, .s-icon { width: 56px; height: 56px; background: var(--light-blue); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+
+/* TEAM PAGE */
+.team-grid, .team-grid-lg { display: grid; gap: 1.5rem; }
+.team-grid-lg { grid-template-columns: repeat(3, 1fr); }
+.team-grid { grid-template-columns: repeat(4, 1fr); }
+.team-role { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+
+/* PROJECTS PAGE */
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.project-img { width: 100%; height: 180px; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; }
+.project-body { padding: 1.25rem; }
+.project-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-light); margin-top: 0.75rem; flex-wrap: wrap; }
+
+/* SCAN TO BIM PAGE */
+.info-box { background: var(--light-blue); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+
+/* SERVICES GRID (MEP AUTOMATION) */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+/* JOB LISTING (CAREERS) */
+.job-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0; }
+.job-reqs { margin-top: 0.75rem; padding-left: 1.25rem; list-style: disc; color: var(--text-gray); font-size: 0.9rem; }
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -369,6 +431,16 @@ select.form-control { cursor: pointer; }
   .tab-btn { font-size: 0.82rem; padding: 10px 14px; white-space: nowrap; }
   .lod-header { flex-direction: column; text-align: center; }
   .contact-section { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .app-steps { grid-template-columns: repeat(2, 1fr); }
+  .software-grid { grid-template-columns: repeat(2, 1fr); }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid-lg { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .lod-details { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -380,4 +452,10 @@ select.form-control { cursor: pointer; }
   .filter-btn { padding: 7px 14px; font-size: 0.8rem; }
   .lod-table { font-size: 0.78rem; }
   .lod-table th, .lod-table td { padding: 8px 10px; }
+  .app-steps { grid-template-columns: 1fr; }
+  .software-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid-lg, .team-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
 }
