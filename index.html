@@ -194,9 +194,20 @@
 
     <!-- ── LOD Levels ────────────────────────────────────── -->
     <h3 class="lod-sub-heading fade-in">Level of Development (LOD 100 → 500)</h3>
+
+    <!-- LOD Progression Bar -->
+    <div class="lod-progress-bar fade-in" aria-hidden="true">
+      <div class="lod-progress-step active"><span class="lod-progress-dot"></span><span class="lod-progress-label">100</span></div>
+      <div class="lod-progress-step active"><span class="lod-progress-dot"></span><span class="lod-progress-label">200</span></div>
+      <div class="lod-progress-step active"><span class="lod-progress-dot"></span><span class="lod-progress-label">300</span></div>
+      <div class="lod-progress-step active"><span class="lod-progress-dot"></span><span class="lod-progress-label">400</span></div>
+      <div class="lod-progress-step active"><span class="lod-progress-dot"></span><span class="lod-progress-label">500</span></div>
+    </div>
+
     <div class="lod-grid">
 
       <div class="lod-card fade-in lod-card--100">
+        <span class="lod-number-bg" aria-hidden="true">100</span>
         <span class="lod-badge">LOD 100</span>
         <h4 class="lod-level-name">Conceptual</h4>
         <ul class="lod-deliverables">
@@ -208,6 +219,7 @@
       </div>
 
       <div class="lod-card fade-in lod-card--200">
+        <span class="lod-number-bg" aria-hidden="true">200</span>
         <span class="lod-badge">LOD 200</span>
         <h4 class="lod-level-name">Schematic Design</h4>
         <ul class="lod-deliverables">
@@ -219,6 +231,7 @@
       </div>
 
       <div class="lod-card fade-in lod-card--300">
+        <span class="lod-number-bg" aria-hidden="true">300</span>
         <span class="lod-badge">LOD 300</span>
         <h4 class="lod-level-name">Design Development</h4>
         <ul class="lod-deliverables">
@@ -230,6 +243,7 @@
       </div>
 
       <div class="lod-card fade-in lod-card--400">
+        <span class="lod-number-bg" aria-hidden="true">400</span>
         <span class="lod-badge">LOD 400</span>
         <h4 class="lod-level-name">Construction / Fabrication</h4>
         <ul class="lod-deliverables">
@@ -241,6 +255,7 @@
       </div>
 
       <div class="lod-card fade-in lod-card--500">
+        <span class="lod-number-bg" aria-hidden="true">500</span>
         <span class="lod-badge">LOD 500</span>
         <h4 class="lod-level-name">As-Built / Facility Management</h4>
         <ul class="lod-deliverables">
@@ -258,8 +273,16 @@
     <div class="mep-grid">
 
       <div class="mep-card mep-card--hvac fade-in">
-        <div class="mep-card-icon" aria-hidden="true">🌬️</div>
-        <h4 class="mep-card-title">HVAC</h4>
+        <div class="mep-card-header">
+          <div class="mep-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#63B3ED">
+              <path d="M9.5 2A5.5 5.5 0 0 0 4 7.5c0 3 2.5 5.5 5.5 5.5h5A5.5 5.5 0 0 0 20 7.5 5.5 5.5 0 0 0 14.5 2h-5Z"/>
+              <path d="M4 13v3a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-3"/>
+              <line x1="12" y1="20" x2="12" y2="23"/>
+            </svg>
+          </div>
+          <h4 class="mep-card-title">HVAC</h4>
+        </div>
         <ul class="mep-deliverables">
           <li>Ductwork (supply / return / exhaust) modelled to LOD 300–400</li>
           <li>AHU, FCU, VAV, chiller &amp; cooling tower placement</li>
@@ -270,8 +293,17 @@
       </div>
 
       <div class="mep-card mep-card--plumbing fade-in">
-        <div class="mep-card-icon" aria-hidden="true">💧</div>
-        <h4 class="mep-card-title">Plumbing</h4>
+        <div class="mep-card-header">
+          <div class="mep-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#3b82f6">
+              <path d="M12 2v6"/>
+              <path d="M6 8h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8Z"/>
+              <path d="M6 8c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2"/>
+              <circle cx="12" cy="14" r="1.5"/>
+            </svg>
+          </div>
+          <h4 class="mep-card-title">Plumbing</h4>
+        </div>
         <ul class="mep-deliverables">
           <li>Cold water, hot water, drainage &amp; vent systems</li>
           <li>Pipe sizing per UPC (USA), BS EN 12056 (UK/EU), UAE local codes</li>
@@ -282,8 +314,15 @@
       </div>
 
       <div class="mep-card mep-card--fire fade-in">
-        <div class="mep-card-icon" aria-hidden="true">🔥</div>
-        <h4 class="mep-card-title">Fire Protection</h4>
+        <div class="mep-card-header">
+          <div class="mep-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#f97316">
+              <path d="M12 2c1 3 4 6 4 10a6 6 0 0 1-12 0c0-4 3-7 4-10"/>
+              <path d="M12 18a3 3 0 0 0 3-3c0-2-1.5-3-3-5-1.5 2-3 3-3 5a3 3 0 0 0 3 3Z"/>
+            </svg>
+          </div>
+          <h4 class="mep-card-title">Fire Protection</h4>
+        </div>
         <ul class="mep-deliverables">
           <li>Sprinkler layouts per NFPA 13 / FM Global (USA &amp; Gulf)</li>
           <li>Standpipe &amp; hose system modelling</li>
@@ -294,8 +333,14 @@
       </div>
 
       <div class="mep-card mep-card--electrical fade-in">
-        <div class="mep-card-icon" aria-hidden="true">⚡</div>
-        <h4 class="mep-card-title">Electrical</h4>
+        <div class="mep-card-header">
+          <div class="mep-card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#eab308">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h4 class="mep-card-title">Electrical</h4>
+        </div>
         <ul class="mep-deliverables">
           <li>Lighting, power, ELV, fire alarm &amp; CCTV conduit routing</li>
           <li>Switchboard, MDB, DB placement &amp; cable tray modelling</li>
@@ -341,7 +386,7 @@
     <!-- ── CTA Strip ─────────────────────────────────────── -->
     <div class="lod-cta-strip fade-in">
       <p class="lod-cta-text">Need a <strong>LOD 300</strong> or <strong>LOD 400</strong> Revit MEP model for your Gulf or USA project?</p>
-      <a href="#contact" class="lod-cta-btn">Request a Free LOD Assessment</a>
+      <a href="#contact" class="lod-cta-btn">Request a Free LOD Assessment →</a>
     </div>
 
   </div>
