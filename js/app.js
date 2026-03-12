@@ -176,7 +176,6 @@
         </div>`}
         <div class="card-footer">
           <span class="card-location">${icon.pin} ${p.location}</span>
-          <span class="card-budget">${p.budget}</span>
         </div>
       </div>`;
 
@@ -397,7 +396,6 @@
     const fields = {
       'modal-client'  : project.client,
       'modal-status'  : project.status,
-      'modal-budget'  : project.budget,
       'modal-year'    : project.year,
       'modal-duration': project.duration,
       'modal-category': project.category,
