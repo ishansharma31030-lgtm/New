@@ -194,7 +194,7 @@
     const ongoing   = PROJECTS.filter(p => p.status === 'Ongoing').length;
     const planned   = PROJECTS.filter(p => p.status === 'Planned').length;
     const cats      = new Set(PROJECTS.map(p => p.category)).size;
-    const clients   = new Set(PROJECTS.map(p => p.client)).size;
+    const clients   = 32;
 
     const data = [
       { icon: '🏗️', num: total,     label: 'Total Projects',    suffix: '+' },
