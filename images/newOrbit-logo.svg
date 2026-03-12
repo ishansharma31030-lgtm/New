@@ -1,13 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
-  <!-- Orbit ring -->
-  <ellipse cx="45" cy="40" rx="38" ry="16" fill="none" stroke="#1E90FF" stroke-width="3" opacity="0.85"/>
-  <!-- Planet core -->
-  <circle cx="45" cy="40" r="14" fill="#1E90FF" opacity="0.95"/>
-  <!-- Orbit satellite dot -->
-  <circle cx="83" cy="40" r="5" fill="#63B3ED"/>
-  <!-- N letter in planet -->
-  <text x="38" y="45" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900" fill="white">N</text>
-  <!-- Company Name -->
-  <text x="100" y="33" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="1">NewOrbit</text>
-  <text x="100" y="58" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#63B3ED" letter-spacing="3">SERVICES</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" width="360" height="90">
+  <!-- Transparent background (no fill) -->
+
+  <!-- 3D Geometric building lattice icon -->
+  <!-- Base shape: diamond/cube outlines suggesting BIM architectural geometry -->
+  <polygon points="38,18 62,30 62,58 38,70 14,58 14,30" fill="none" stroke="#1E90FF" stroke-width="2.2" opacity="0.9"/>
+  <!-- Inner horizontal line (floor plate) -->
+  <line x1="14" y1="44" x2="62" y2="44" stroke="#1E90FF" stroke-width="1.5" opacity="0.7"/>
+  <!-- Vertical center line -->
+  <line x1="38" y1="18" x2="38" y2="70" stroke="#63B3ED" stroke-width="1.5" opacity="0.6"/>
+  <!-- Diagonal cross bracing top-left to center -->
+  <line x1="14" y1="30" x2="62" y2="58" stroke="#1E90FF" stroke-width="1.2" opacity="0.4"/>
+  <line x1="62" y1="30" x2="14" y2="58" stroke="#1E90FF" stroke-width="1.2" opacity="0.4"/>
+
+  <!-- Solid filled core hexagon for depth -->
+  <polygon points="38,28 50,35 50,49 38,56 26,49 26,35" fill="#1E90FF" opacity="0.85"/>
+  <!-- White N monogram inside -->
+  <text x="31" y="48" font-family="Arial Black, Arial, sans-serif" font-size="17" font-weight="900" fill="#ffffff">N</text>
+
+  <!-- Orbital arc sweeping around the icon -->
+  <path d="M 6 44 A 42 20 -15 0 1 72 44" fill="none" stroke="#63B3ED" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  <!-- Orbital node dots -->
+  <circle cx="6"  cy="44" r="4" fill="#63B3ED" opacity="0.9"/>
+  <circle cx="72" cy="44" r="4" fill="#1E90FF" opacity="0.9"/>
+
+  <!-- NEWORBIT wordmark -->
+  <text x="88" y="38" font-family="Arial Black, Arial, sans-serif" font-size="26" font-weight="900" fill="#FFFFFF" letter-spacing="2">NEWORBIT</text>
+  <!-- Tagline -->
+  <text x="89" y="60" font-family="Arial, sans-serif" font-size="10.5" font-weight="500" fill="#63B3ED" letter-spacing="2.5">BIM SOLUTIONS · AUTOMATION · SCAN-TO-BIM</text>
+  <!-- Thin accent rule under wordmark -->
+  <line x1="88" y1="65" x2="346" y2="65" stroke="#1E90FF" stroke-width="1" opacity="0.45"/>
 </svg>
