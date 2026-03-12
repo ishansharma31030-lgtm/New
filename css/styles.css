@@ -1327,6 +1327,8 @@ footer {
 @media (max-width: 640px) {
   .lod-grid  { grid-template-columns: 1fr; }
   .mep-grid  { grid-template-columns: 1fr; }
-  .lod-progress-bar { display: none; }
+  .lod-progress-bar { margin-bottom: 1.25rem; }
+  .lod-progress-dot { width: 10px; height: 10px; }
+  .lod-progress-label { font-size: 0.6rem; }
   .mep-card-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
