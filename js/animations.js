@@ -125,6 +125,11 @@
         H = hero.offsetHeight;
         canvas.width  = W;
         canvas.height = H;
+        /* Clamp existing node positions into the new viewport */
+        for (const n of nodes) {
+          n.x = Math.min(Math.max(n.x, 0), W);
+          n.y = Math.min(Math.max(n.y, 0), H);
+        }
         draw();
       }, 200);
     });
@@ -179,7 +184,8 @@
       ? container.querySelectorAll('.progress-fill, .cat-bar-fill')
       : [];
     fills.forEach(function (fill) {
-      const target = fill.style.width || '0%';
+      /* Prefer inline style (set by JS), fall back to computed style */
+      const target = fill.style.width || window.getComputedStyle(fill).width || '0%';
       fill.style.width = '0%';
       /* Force reflow then animate */
       void fill.offsetWidth;

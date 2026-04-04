@@ -3339,11 +3339,14 @@ footer {
 
 /* ── Scroll Reveal — visible state ─────────────────────── */
 
-.is-visible {
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-scale.is-visible {
 
-  opacity: 1 !important;
+  opacity: 1;
 
-  transform: none !important;
+  transform: none;
 
 }
 
@@ -3379,7 +3382,7 @@ footer {
 
 .building-logo svg {
 
-  animation: buildingPulseEnhanced 3s ease-in-out infinite !important;
+  animation: buildingPulseEnhanced 3s ease-in-out infinite;
 
 }
 
@@ -3469,7 +3472,7 @@ footer {
 
 .hero-badge .dot {
 
-  animation: dotPulseEnhanced 2s ease-in-out infinite !important;
+  animation: dotPulseEnhanced 2s ease-in-out infinite;
 
 }
 
