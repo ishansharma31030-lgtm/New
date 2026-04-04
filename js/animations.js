@@ -711,6 +711,321 @@
   }
 
   /* ═══════════════════════════════════════════════════════
+     FULL-PAGE BACKGROUND CANVAS — buildings + ducting pipes
+  ═══════════════════════════════════════════════════════ */
+
+  function initBgCanvas() {
+    const canvas = document.getElementById('bg-canvas');
+    if (!canvas) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = canvas.getContext('2d');
+
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+    canvas.width  = W;
+    canvas.height = H;
+
+    /* ── Colour palette (same as hero, drawn at lower opacity) ── */
+    const ACCENT   = { r: 0,   g: 87,  b: 184 };
+    const ACCENT_L = { r: 77,  g: 166, b: 255 };
+    const CYAN     = { r: 0,   g: 210, b: 255 };
+    const WHITE    = { r: 220, g: 235, b: 255 };
+    const PIPE_H   = { r: 0,   g: 180, b: 240 };
+    const PIPE_P   = { r: 30,  g: 120, b: 255 };
+    const PIPE_F   = { r: 220, g: 60,  b: 60  };
+    const STEEL    = { r: 140, g: 200, b: 255 };
+
+    /* Approximate pixel gap between flow particles along a pipe */
+    const PARTICLE_SPACING = 240;
+    /* Multiplier to boost particle glow visibility at reduced opacity */
+    const PARTICLE_GLOW_BOOST = 2.2;
+
+    function rgba(c, a) { return `rgba(${c.r},${c.g},${c.b},${a})`; }
+
+    /* ── 1. Perspective grid (subtle) ── */
+    let gridTick = 0;
+    const HORIZON_Y = 0.46;
+    const GRID_ROWS = 14;
+    const GRID_COLS = 12;
+
+    function drawGrid() {
+      const hy     = H * HORIZON_Y;
+      const vpx    = W * 0.5;
+      const spread = W * 0.95;
+      const tOff   = (gridTick * 0.0008) % (1 / GRID_ROWS);
+      ctx.save();
+      for (let r = 0; r <= GRID_ROWS; r++) {
+        const t    = ((r / GRID_ROWS + tOff) % 1);
+        const y    = hy + Math.pow(t, 1.7) * (H - hy + 80);
+        const hw   = Math.pow(t, 1.1) * spread * 0.5;
+        const alpha = Math.pow(t, 0.6) * 0.07;
+        ctx.strokeStyle = rgba(ACCENT_L, alpha);
+        ctx.lineWidth   = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(vpx - hw, y);
+        ctx.lineTo(vpx + hw, y);
+        ctx.stroke();
+      }
+      for (let c = 0; c <= GRID_COLS; c++) {
+        const frac  = c / GRID_COLS;
+        const xFar  = vpx + (frac - 0.5) * spread;
+        const alpha = 0.05 - Math.abs(frac - 0.5) * 0.04;
+        ctx.strokeStyle = rgba(ACCENT, alpha);
+        ctx.lineWidth   = 0.4;
+        ctx.beginPath();
+        ctx.moveTo(vpx, hy);
+        ctx.lineTo(xFar, H + 60);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    /* ── 2. Isometric buildings (sparse, low opacity) ── */
+    function makeBg(i) {
+      const slots = [0.04, 0.16, 0.30, 0.52, 0.68, 0.82, 0.94];
+      const xBase = slots[i % slots.length] * W + (Math.random() - 0.5) * W * 0.03;
+      return {
+        xBase,
+        baseY  : H * (0.72 + Math.random() * 0.18),
+        w      : 28 + Math.random() * 48,
+        h      : 55 + Math.random() * 140,
+        depth  : 18 + Math.random() * 28,
+        phase  : Math.random() * Math.PI * 2,
+        speed  : 0.004 + Math.random() * 0.004,
+        opacity: 0.055 + Math.random() * 0.055,
+        floors : 3 + Math.floor(Math.random() * 6),
+        hasCrane: Math.random() > 0.65
+      };
+    }
+    const bgBuildings = Array.from({ length: 7 }, (_, i) => makeBg(i));
+
+    function drawBgBuilding(b, frame) {
+      const pulse = 0.5 + 0.5 * Math.sin(frame * b.speed + b.phase);
+      const op    = b.opacity * (0.55 + 0.45 * pulse);
+      const { w, h, depth } = b;
+      const iso = { dx: depth * 0.58, dy: -depth * 0.36 };
+      const x = b.xBase, y = b.baseY;
+      ctx.save();
+      /* Front face */
+      ctx.strokeStyle = rgba(ACCENT_L, op);
+      ctx.lineWidth   = 0.8;
+      ctx.beginPath(); ctx.rect(x - w / 2, y - h, w, h); ctx.stroke();
+      /* Top face */
+      ctx.fillStyle   = rgba(ACCENT_L, op * 0.08);
+      ctx.strokeStyle = rgba(ACCENT_L, op);
+      ctx.lineWidth   = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(x - w / 2, y - h);
+      ctx.lineTo(x - w / 2 + iso.dx, y - h + iso.dy);
+      ctx.lineTo(x + w / 2 + iso.dx, y - h + iso.dy);
+      ctx.lineTo(x + w / 2, y - h);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      /* Right side */
+      ctx.strokeStyle = rgba(STEEL, op * 0.70);
+      ctx.lineWidth   = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(x + w / 2, y - h);
+      ctx.lineTo(x + w / 2 + iso.dx, y - h + iso.dy);
+      ctx.lineTo(x + w / 2 + iso.dx, y + iso.dy);
+      ctx.lineTo(x + w / 2, y);
+      ctx.closePath(); ctx.stroke();
+      /* Floor lines */
+      ctx.lineWidth = 0.35;
+      for (let f = 1; f < b.floors; f++) {
+        const fy = y - (h / b.floors) * f;
+        ctx.strokeStyle = rgba(ACCENT_L, op * 0.45);
+        ctx.beginPath(); ctx.moveTo(x - w / 2, fy); ctx.lineTo(x + w / 2, fy); ctx.stroke();
+      }
+      /* HVAC rooftop box */
+      const rux = x + iso.dx * 0.35, ruy = y - h + iso.dy * 0.7;
+      ctx.strokeStyle = rgba(PIPE_H, op * 0.60);
+      ctx.lineWidth   = 0.5;
+      ctx.beginPath(); ctx.rect(rux - w * 0.13, ruy - h * 0.03, w * 0.26, h * 0.03); ctx.stroke();
+      /* Crane */
+      if (b.hasCrane) {
+        const cx = x + w / 2 + 7, cy = y - h;
+        ctx.strokeStyle = rgba(STEEL, op * 0.50);
+        ctx.lineWidth   = 0.6;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx, cy - 38); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx, cy - 36); ctx.lineTo(cx + 32, cy - 36); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx, cy - 36); ctx.lineTo(cx - 12, cy - 36); ctx.stroke();
+        const hoistOff = 14 + 9 * Math.sin(frame * 0.013 + b.phase);
+        ctx.strokeStyle = rgba(CYAN, op * 0.40);
+        ctx.lineWidth   = 0.4;
+        ctx.beginPath(); ctx.moveTo(cx + 25, cy - 36); ctx.lineTo(cx + 25, cy - 36 + hoistOff); ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    /* ── 3. MEP pipe / duct network ── */
+    function buildBgPipes() {
+      return [
+        /* HVAC main duct */
+        { col: PIPE_H, lw: 2.8, label: 'HVAC',
+          pts: [[0.02, 0.20], [0.28, 0.20], [0.28, 0.32], [0.60, 0.32], [0.60, 0.20], [0.98, 0.20]] },
+        { col: PIPE_H, lw: 1.5, label: null,
+          pts: [[0.14, 0.20], [0.14, 0.48]] },
+        { col: PIPE_H, lw: 1.5, label: null,
+          pts: [[0.44, 0.32], [0.44, 0.56]] },
+        { col: PIPE_H, lw: 1.5, label: null,
+          pts: [[0.76, 0.20], [0.76, 0.46]] },
+        /* Plumbing supply */
+        { col: PIPE_P, lw: 1.8, label: 'CWS',
+          pts: [[0.05, 0.62], [0.38, 0.62], [0.38, 0.74], [0.68, 0.74], [0.68, 0.62], [0.95, 0.62]] },
+        { col: PIPE_P, lw: 1.0, label: null,
+          pts: [[0.19, 0.62], [0.19, 0.48], [0.19, 0.38]] },
+        { col: PIPE_P, lw: 1.0, label: null,
+          pts: [[0.53, 0.74], [0.53, 0.58], [0.53, 0.42]] },
+        { col: PIPE_P, lw: 1.0, label: null,
+          pts: [[0.83, 0.62], [0.83, 0.48]] },
+        /* Fire sprinkler ring main */
+        { col: PIPE_F, lw: 1.4, label: 'FP',
+          pts: [[0.08, 0.40], [0.34, 0.40], [0.34, 0.50], [0.64, 0.50], [0.64, 0.40], [0.92, 0.40]] },
+        { col: PIPE_F, lw: 0.8, label: null,
+          pts: [[0.21, 0.40], [0.21, 0.52]] },
+        { col: PIPE_F, lw: 0.8, label: null,
+          pts: [[0.49, 0.50], [0.49, 0.60]] },
+        { col: PIPE_F, lw: 0.8, label: null,
+          pts: [[0.78, 0.40], [0.78, 0.54]] }
+      ];
+    }
+
+    let bgPipes = buildBgPipes();
+
+    function resolveBgPipes() {
+      bgPipes.forEach(pipe => {
+        pipe.resolved = pipe.pts.map(([fx, fy]) => [fx * W, fy * H]);
+        let total = 0;
+        for (let i = 1; i < pipe.resolved.length; i++) {
+          const dx = pipe.resolved[i][0] - pipe.resolved[i - 1][0];
+          const dy = pipe.resolved[i][1] - pipe.resolved[i - 1][1];
+          total += Math.sqrt(dx * dx + dy * dy);
+        }
+        pipe.totalLen = total;
+        const count = Math.max(1, Math.floor(total / PARTICLE_SPACING));
+        pipe.particles = Array.from({ length: count }, (_, k) => ({
+          t    : k / count,
+          speed: 0.0005 + Math.random() * 0.0006
+        }));
+      });
+    }
+    resolveBgPipes();
+
+    function pointAlongBgPipe(resolved, totalLen, t) {
+      const target = t * totalLen;
+      let acc = 0;
+      for (let i = 1; i < resolved.length; i++) {
+        const dx  = resolved[i][0] - resolved[i - 1][0];
+        const dy  = resolved[i][1] - resolved[i - 1][1];
+        const seg = Math.sqrt(dx * dx + dy * dy);
+        if (acc + seg >= target) {
+          const u = (target - acc) / seg;
+          return [resolved[i - 1][0] + dx * u, resolved[i - 1][1] + dy * u];
+        }
+        acc += seg;
+      }
+      return resolved[resolved.length - 1];
+    }
+
+    function drawBgPipes(frame) {
+      const globalAlpha = 0.18 + 0.05 * Math.sin(frame * 0.007);
+      bgPipes.forEach(pipe => {
+        if (!pipe.resolved || pipe.resolved.length < 2) return;
+        const col = pipe.col;
+        ctx.save();
+        ctx.globalAlpha = globalAlpha;
+        ctx.strokeStyle = rgba(col, 0.55);
+        ctx.lineWidth   = pipe.lw;
+        ctx.lineCap     = 'round';
+        ctx.lineJoin    = 'round';
+        ctx.beginPath();
+        ctx.moveTo(pipe.resolved[0][0], pipe.resolved[0][1]);
+        for (let i = 1; i < pipe.resolved.length; i++) {
+          ctx.lineTo(pipe.resolved[i][0], pipe.resolved[i][1]);
+        }
+        ctx.stroke();
+        /* Highlight */
+        ctx.strokeStyle = rgba(col, 0.22);
+        ctx.lineWidth   = pipe.lw * 0.32;
+        ctx.beginPath();
+        ctx.moveTo(pipe.resolved[0][0], pipe.resolved[0][1] - pipe.lw * 0.28);
+        for (let i = 1; i < pipe.resolved.length; i++) {
+          ctx.lineTo(pipe.resolved[i][0], pipe.resolved[i][1] - pipe.lw * 0.28);
+        }
+        ctx.stroke();
+        /* Elbow joints */
+        for (let i = 1; i < pipe.resolved.length - 1; i++) {
+          ctx.beginPath();
+          ctx.arc(pipe.resolved[i][0], pipe.resolved[i][1], pipe.lw * 0.90, 0, Math.PI * 2);
+          ctx.fillStyle   = rgba(col, 0.60);
+          ctx.strokeStyle = rgba(WHITE, 0.20);
+          ctx.lineWidth   = 0.4;
+          ctx.fill(); ctx.stroke();
+        }
+        /* Label */
+        if (pipe.label) {
+          const [lx, ly] = pipe.resolved[0];
+          ctx.font      = 'bold 6.5px monospace';
+          ctx.fillStyle = rgba(col, 0.85);
+          ctx.textAlign = 'left';
+          ctx.fillText(pipe.label, lx + 4, ly - pipe.lw - 2);
+        }
+        ctx.restore();
+        /* Flow particles */
+        pipe.particles.forEach(p => {
+          p.t = (p.t + p.speed) % 1;
+          const [px, py] = pointAlongBgPipe(pipe.resolved, pipe.totalLen, p.t);
+          const grad = ctx.createRadialGradient(px, py, 0, px, py, pipe.lw * 2.0);
+          grad.addColorStop(0, rgba(WHITE, 0.85));
+          grad.addColorStop(0.4, rgba(col, 0.60));
+          grad.addColorStop(1, rgba(col, 0));
+          ctx.beginPath();
+          ctx.arc(px, py, pipe.lw * 2.0, 0, Math.PI * 2);
+          ctx.fillStyle   = grad;
+          ctx.globalAlpha = 0.60 * globalAlpha * PARTICLE_GLOW_BOOST;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+        });
+      });
+    }
+
+    /* ── Render loop ── */
+    let bgFrame = 0;
+    let bgAnimId;
+
+    function drawBg() {
+      bgFrame++;
+      gridTick++;
+      ctx.clearRect(0, 0, W, H);
+      drawGrid();
+      bgBuildings.forEach(b => drawBgBuilding(b, bgFrame));
+      drawBgPipes(bgFrame);
+      bgAnimId = requestAnimationFrame(drawBg);
+    }
+
+    drawBg();
+
+    /* Resize */
+    let bgResizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(bgResizeTimer);
+      bgResizeTimer = setTimeout(() => {
+        cancelAnimationFrame(bgAnimId);
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width  = W;
+        canvas.height = H;
+        bgFrame  = 0;
+        gridTick = 0;
+        bgBuildings.length = 0;
+        Array.from({ length: 7 }, (_, i) => makeBg(i)).forEach(b => bgBuildings.push(b));
+        resolveBgPipes();
+        drawBg();
+      }, 200);
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════
      HERO STATS — FLOATING ANIMATION STAGGER
   ═══════════════════════════════════════════════════════ */
 
@@ -726,6 +1041,7 @@
   ═══════════════════════════════════════════════════════ */
 
   function init() {
+    initBgCanvas();
     initHeroCanvas();
     initReveal();
     initNavHighlight();
