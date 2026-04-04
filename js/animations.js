@@ -29,7 +29,7 @@
     const CYAN         = { r: 0,   g: 210, b: 255 };
     const WHITE        = { r: 220, g: 235, b: 255 };
 
-    function rgba(c, a) { return `rgba(${c.r},${c.g},${c.b},${a.toFixed(3)})`; }
+    function rgba(c, a) { return `rgba(${c.r},${c.g},${c.b},${a})`; }
 
     /* ══════════════════════════════════════════════════════
        1. PERSPECTIVE GRID  (BIM floor plane scrolling toward viewer)
@@ -325,7 +325,9 @@
         ctx.font      = '7.5px monospace';
         ctx.fillStyle = rgba(ACCENT_L, alpha * 1.5);
         ctx.textAlign = 'center';
-        ctx.fillText(Math.round(d.len * 0.28) + ' m', mx, my - 5);
+        /* Decorative label — scale chosen to produce plausible building dimensions */
+        const DISPLAY_SCALE = 0.28;
+        ctx.fillText(Math.round(d.len * DISPLAY_SCALE) + ' m', mx, my - 5);
 
         ctx.restore();
       }
