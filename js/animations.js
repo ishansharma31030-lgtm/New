@@ -1047,6 +1047,13 @@
     initNavHighlight();
     initHeroStatsFloat();
 
+    /* Pause SMIL orbit animations when user prefers reduced motion */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.building-logo svg').forEach(function (svg) {
+        svg.pauseAnimations();
+      });
+    }
+
     /* Add reveal classes to static HTML section elements */
     document.querySelectorAll('.section-header').forEach(function (el) {
       el.classList.add('reveal-up');
