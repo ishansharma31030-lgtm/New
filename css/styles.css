@@ -178,8 +178,7 @@ img { display: block; max-width: 100%; }
 
 .nav-brand-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; font-family: 'Barlow', 'Inter', sans-serif; letter-spacing: 0.08em; }
 
-.nav-brand-tagline { font-size: 0.45rem; color: var(--accent-light); letter-spacing: 1.5px; font-weight: 600; white-space: nowrap; text-transform: uppercase; }
-
+.nav-brand-tagline { font-size: 0.45rem; color: var(--accent-light); letter-spacing: 1.5px; font-weight: 600; white-space: nowrap; text-transform: uppercase; text-align: left; }
 
 
 .nav-links {
@@ -348,6 +347,8 @@ img { display: block; max-width: 100%; }
 
   margin-bottom: 28px;
 
+  justify-content: flex-start;
+
 }
 
 
@@ -360,7 +361,9 @@ img { display: block; max-width: 100%; }
 
   text-align: left;
 
-  width: min-content;
+  align-items: flex-start;
+
+  width: auto;
 
 }
 
@@ -396,9 +399,7 @@ img { display: block; max-width: 100%; }
 
   margin-top: 4px;
 
-  text-align: justify;
-
-  text-align-last: justify;
+  text-align: left;
 
 }
 
