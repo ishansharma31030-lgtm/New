@@ -32,6 +32,7 @@
     const PIPE_P   = { r: 30,  g: 120, b: 255 };   /* plumbing    — blue       */
     const PIPE_F   = { r: 220, g: 60,  b: 60  };   /* fire sprinkler — red     */
     const STEEL    = { r: 140, g: 200, b: 255 };   /* structural steel         */
+    const ELEC     = { r: 255, g: 185, b: 0   };   /* electrical — amber       */
 
     function rgba(c, a) { return `rgba(${c.r},${c.g},${c.b},${a})`; }
 
@@ -307,6 +308,37 @@
         {
           col: PIPE_F, lw: 0.9, label: null,
           pts: [[0.80, 0.42], [0.80, 0.56]]
+        },
+        /* Electrical cable tray — main trunk above HVAC */
+        {
+          col: ELEC, lw: 2.2, label: 'EL',
+          pts: [[0.02, 0.12], [0.28, 0.12], [0.28, 0.20], [0.60, 0.20], [0.60, 0.12], [0.98, 0.12]]
+        },
+        /* Electrical branch drops to panels */
+        {
+          col: ELEC, lw: 1.1, label: null,
+          pts: [[0.14, 0.12], [0.14, 0.28]]
+        },
+        {
+          col: ELEC, lw: 1.1, label: null,
+          pts: [[0.44, 0.20], [0.44, 0.36]]
+        },
+        {
+          col: ELEC, lw: 1.1, label: null,
+          pts: [[0.76, 0.12], [0.76, 0.30]]
+        },
+        /* Electrical sub-distribution — lower ring */
+        {
+          col: ELEC, lw: 1.8, label: null,
+          pts: [[0.04, 0.86], [0.32, 0.86], [0.32, 0.78], [0.64, 0.78], [0.64, 0.86], [0.96, 0.86]]
+        },
+        {
+          col: ELEC, lw: 0.9, label: null,
+          pts: [[0.18, 0.86], [0.18, 0.72]]
+        },
+        {
+          col: ELEC, lw: 0.9, label: null,
+          pts: [[0.48, 0.78], [0.48, 0.66]]
         }
       ];
     }
@@ -585,6 +617,50 @@
     }
 
     /* ══════════════════════════════════════════════════════
+       7. ELECTRICAL PANEL BOXES  (distribution boards)
+    ══════════════════════════════════════════════════════ */
+    const heroPanels = [
+      { fx: 0.14, fy: 0.28 },
+      { fx: 0.44, fy: 0.36 },
+      { fx: 0.76, fy: 0.30 },
+      { fx: 0.18, fy: 0.72 },
+      { fx: 0.48, fy: 0.66 }
+    ];
+
+    function drawElecPanels(frame) {
+      const alpha = 0.28 + 0.10 * Math.sin(frame * 0.011);
+      heroPanels.forEach(p => {
+        const px = p.fx * W;
+        const py = p.fy * H;
+        const pw = 14, ph = 18;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = rgba(ELEC, 0.85);
+        ctx.fillStyle   = rgba(ELEC, 0.07);
+        ctx.lineWidth   = 0.8;
+        ctx.beginPath();
+        ctx.rect(px - pw / 2, py - ph / 2, pw, ph);
+        ctx.fill();
+        ctx.stroke();
+        ctx.strokeStyle = rgba(ELEC, 0.55);
+        ctx.lineWidth   = 0.4;
+        for (let b = 1; b <= 3; b++) {
+          const by = py - ph / 2 + (ph / 4) * b;
+          ctx.beginPath();
+          ctx.moveTo(px - pw / 2 + 2, by);
+          ctx.lineTo(px + pw / 2 - 2, by);
+          ctx.stroke();
+        }
+        ctx.font      = 'bold 5.5px monospace';
+        ctx.fillStyle = rgba(ELEC, 0.90);
+        ctx.textAlign = 'center';
+        ctx.globalAlpha = alpha * 1.1;
+        ctx.fillText('DB', px, py - ph / 2 - 2);
+        ctx.restore();
+      });
+    }
+
+    /* ══════════════════════════════════════════════════════
        RENDER LOOP
     ══════════════════════════════════════════════════════ */
     let frame  = 0;
@@ -599,6 +675,7 @@
       drawScanPoints(frame);
       drawDimLines(frame);
       drawPipes(frame);
+      drawElecPanels(frame);
       drawBuildings(frame);
       drawNodes(frame);
 
@@ -734,6 +811,7 @@
     const PIPE_P   = { r: 30,  g: 120, b: 255 };
     const PIPE_F   = { r: 220, g: 60,  b: 60  };
     const STEEL    = { r: 140, g: 200, b: 255 };
+    const ELEC     = { r: 255, g: 185, b: 0   };   /* electrical — amber       */
 
     /* Approximate pixel gap between flow particles along a pipe */
     const PARTICLE_SPACING = 240;
@@ -886,7 +964,23 @@
         { col: PIPE_F, lw: 0.8, label: null,
           pts: [[0.49, 0.50], [0.49, 0.60]] },
         { col: PIPE_F, lw: 0.8, label: null,
-          pts: [[0.78, 0.40], [0.78, 0.54]] }
+          pts: [[0.78, 0.40], [0.78, 0.54]] },
+        /* Electrical cable tray — main trunk */
+        { col: ELEC, lw: 1.6, label: 'EL',
+          pts: [[0.03, 0.14], [0.30, 0.14], [0.30, 0.24], [0.60, 0.24], [0.60, 0.14], [0.97, 0.14]] },
+        { col: ELEC, lw: 0.9, label: null,
+          pts: [[0.15, 0.14], [0.15, 0.30]] },
+        { col: ELEC, lw: 0.9, label: null,
+          pts: [[0.44, 0.24], [0.44, 0.38]] },
+        { col: ELEC, lw: 0.9, label: null,
+          pts: [[0.74, 0.14], [0.74, 0.28]] },
+        /* Electrical sub-distribution — lower ring */
+        { col: ELEC, lw: 1.3, label: null,
+          pts: [[0.04, 0.86], [0.31, 0.86], [0.31, 0.76], [0.63, 0.76], [0.63, 0.86], [0.96, 0.86]] },
+        { col: ELEC, lw: 0.7, label: null,
+          pts: [[0.17, 0.86], [0.17, 0.70]] },
+        { col: ELEC, lw: 0.7, label: null,
+          pts: [[0.47, 0.76], [0.47, 0.63]] }
       ];
     }
 
@@ -989,6 +1083,48 @@
       });
     }
 
+    /* ── 4. Electrical panel boxes (distribution boards) ── */
+    const bgPanels = [
+      { fx: 0.15, fy: 0.30 },
+      { fx: 0.44, fy: 0.38 },
+      { fx: 0.74, fy: 0.28 },
+      { fx: 0.17, fy: 0.68 },
+      { fx: 0.47, fy: 0.61 }
+    ];
+
+    function drawBgElecPanels(frame) {
+      const alpha = 0.13 + 0.05 * Math.sin(frame * 0.009);
+      bgPanels.forEach(p => {
+        const px = p.fx * W;
+        const py = p.fy * H;
+        const pw = 11, ph = 15;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = rgba(ELEC, 0.80);
+        ctx.fillStyle   = rgba(ELEC, 0.06);
+        ctx.lineWidth   = 0.6;
+        ctx.beginPath();
+        ctx.rect(px - pw / 2, py - ph / 2, pw, ph);
+        ctx.fill();
+        ctx.stroke();
+        ctx.strokeStyle = rgba(ELEC, 0.50);
+        ctx.lineWidth   = 0.35;
+        for (let b = 1; b <= 3; b++) {
+          const by = py - ph / 2 + (ph / 4) * b;
+          ctx.beginPath();
+          ctx.moveTo(px - pw / 2 + 2, by);
+          ctx.lineTo(px + pw / 2 - 2, by);
+          ctx.stroke();
+        }
+        ctx.font      = 'bold 5px monospace';
+        ctx.fillStyle = rgba(ELEC, 0.85);
+        ctx.textAlign = 'center';
+        ctx.globalAlpha = alpha * 1.1;
+        ctx.fillText('DB', px, py - ph / 2 - 2);
+        ctx.restore();
+      });
+    }
+
     /* ── Render loop ── */
     let bgFrame = 0;
     let bgAnimId;
@@ -1000,6 +1136,7 @@
       drawGrid();
       bgBuildings.forEach(b => drawBgBuilding(b, bgFrame));
       drawBgPipes(bgFrame);
+      drawBgElecPanels(bgFrame);
       bgAnimId = requestAnimationFrame(drawBg);
     }
 
