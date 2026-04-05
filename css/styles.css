@@ -176,7 +176,7 @@ img { display: block; max-width: 100%; }
 
 .nav-brand-text { display: flex; flex-direction: column; align-items: stretch; }
 
-.nav-brand-name { font-size: 1rem; font-weight: 800; color: #ffffff; white-space: nowrap; font-family: 'Barlow', 'Inter', sans-serif; letter-spacing: 0.08em; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 2px; }
+.nav-brand-name { font-size: 1rem; font-weight: 800; color: #ffffff; white-space: nowrap; font-family: 'Barlow', 'Inter', sans-serif; letter-spacing: 0.08em; border-bottom: 2px solid var(--accent-light); padding-bottom: 2px; }
 
 .nav-brand-tagline { font-size: 0.45rem; color: var(--accent-light); font-weight: 700; text-transform: uppercase; text-align: justify; text-align-last: justify; }
 
@@ -383,7 +383,7 @@ img { display: block; max-width: 100%; }
 
   font-family: 'Barlow', 'Inter', sans-serif;
 
-  border-bottom: 2px solid rgba(255,255,255,0.25);
+  border-bottom: 2px solid var(--accent-light);
 
   padding-bottom: 3px;
 
