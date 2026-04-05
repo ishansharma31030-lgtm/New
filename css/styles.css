@@ -174,7 +174,7 @@ img { display: block; max-width: 100%; }
 
 .nav-logo img { height: 36px; width: auto; filter: drop-shadow(0 0 8px rgba(0,87,184,0.5)); }
 
-.nav-brand-text { display: flex; flex-direction: column; }
+.nav-brand-text { display: flex; flex-direction: column; align-items: flex-start; }
 
 .nav-brand-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; font-family: 'Barlow', 'Inter', sans-serif; letter-spacing: 0.08em; }
 
