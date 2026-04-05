@@ -399,7 +399,11 @@ img { display: block; max-width: 100%; }
 
   margin-top: 4px;
 
-  text-align: left;
+  width: 100%;
+
+  text-align: justify;
+
+  text-align-last: justify;
 
 }
 
