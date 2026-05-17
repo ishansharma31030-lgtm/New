@@ -4,7 +4,7 @@
 const COMPANY = {
   name: "NewOrbit Services",
   tagline: "Engineering Tomorrow's Spaces",
-  location: "Head Office — Jaipur, Rajasthan, India",
+  location: "Head Office — New Jersey, USA",
   email: "info@neworbitservices.com",
   phone: "+44-20-7946-0958",
   website: "www.neworbitservices.com",
