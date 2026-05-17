@@ -2,7 +2,7 @@
 
 > **Live site:** https://ishansharma31030-lgtm.github.io/New/
 
-A comprehensive project management portfolio for **NewOrbit Services**, headquartered in Jaipur, Rajasthan, India.
+A comprehensive project management portfolio for **NewOrbit Services**, headquartered in New Jersey, USA.
 
 ## Features
 
@@ -44,4 +44,4 @@ To enable GitHub Pages in your fork:
 
 ---
 
-© 2024 NewOrbit Services · Jaipur, Rajasthan, India
+© 2024 NewOrbit Services · New Jersey, USA
